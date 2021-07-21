@@ -1,0 +1,164 @@
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+
+\documentclass[12 pt]{article}
+
+\usepackage[margin=1in,footskip=0.25in]{geometry}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\doublespacing
+\usepackage{subfigure}
+\usepackage{float}
+%\usepackage{caption}
+\usepackage[version=4]{mhchem}
+\usepackage{amsmath}
+\usepackage{authblk}
+\usepackage{romannum}
+
+\usepackage[backend=biber, isbn=false, url=false, uniquename=init, terseinits=true, hyperref=true, doi=false, style=numeric, defernumbers=false, autocite=plain, sorting=none]{biblatex}
+\addbibresource{publishing.bib}
+\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+% \renewcommand{\finentrypunct}{
+%   \addperiod\space
+%   (Cited \arabic{citecounter}~time\ifnumequal{\value{citecounter}}{1}{}{s})%
+%  }
+\usepackage{hyperref}
+%\graphicspath{{./graphics/}} % Add this if needed.
+
+
+\setlength{\marginparwidth}{2cm}\usepackage[colorinlistoftodos]{todonotes}
+\newcommand{\addcitation}[1]{\todo[inline,color=green!40]{\textbf{Add citation: }#1}}
+\newcommand{\adddiscussion}[1]{\todo[inline,color=blue!40!green]{\textbf{Add discussion: }#1}}
+\newcommand{\adddata}[1]{\todo[inline,color=blue!60!green]{\textbf{Add data: }#1}}
+\newcommand{\explain}[1]{\todo[inline,color=red!40!yellow]{\textbf{Explain: }#1}}
+\newcommand{\reviewthis}[1]{\todo[color=yellow,inline]{\textbf{Review: }#1}}
+\newcommand{\response}[3]{\todo[color=yellow!90!red,inline]{\textbf{Response to Reviewer #1 (comment #2): }#3}}
+\newcommand{\rework}[1]{\todo[color=orange,inline]{\textbf{Rework: }#1}}
+\newcommand{\incorrect}[1]{\todo[inline,color=red!70]{\textbf{Incorrect: }#1}}
+\newcommand{\rephrase}[1]{\todo[inline,color=blue!40]{\textbf{Rephrase: }#1}}
+\newcommand{\warning}[1]{\todo[color=red,inline]{\textbf{Warning: }#1}}
+\newcommand{\modifyfigure}[1]{\todo[inline,color=yellow!80!blue]{\textbf{Modify figure: }#1}}
+\newcommand{\pleaseconfirm}[1]{\todo[inline,color=red!80!blue]{\textbf{Please confirm: }#1}}
+\newcommand{\query}[1]{\todo[color=gray,inline]{\textbf{Query: }#1}}
+\newcommand{\missingacknowledgment}[1]{\todo[inline,color=red!80]{\textbf{Missing acknowledgment: }#1}}
+\newcommand{\restructuredocument}[1]{\todo[inline,color=blue!80]{\textbf{Restructure document: }#1}}
+\newcommand{\nice}[1]{\todo[color=green,inline]{\textbf{Nice: }#1}}
+\newcommand{\done}[1]{\todo[inline,color=blue!10]{\textbf{Done: }#1}}
+\newcommand{\reply}[1]{\todo[color=yellow!90!red,inline]{\textbf{Reply: }#1}}
+
+\doublespacing
+
+\title{Preparing a manuscript for a peer-reviewed journal the FMDL way}
+\author[1]{\small First Author}
+\author[2]{\small Second Author}
+\author[1]{\small Third Author}
+\author[1]{\small Postdoc Scholar}
+\author[2]{\small Collaborating PI}
+\author[1]{\small Madhusudan Singh\thanks{msingh@ee.iitd.ac.in}}
+\affil[1]{\footnotesize Functional Materials \& Devices Laboratory, Department of Electrical Engineering, IIT Delhi, New Delhi, NCT, India, 110 016.}
+\affil[2]{\footnotesize Department of Chemistry, IIT Delhi, New Delhi, NCT, India, 110 016.}
+
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+This is like a conference abstract, but shorter. No use of acronymns allowed. Briefly (one sentence), motivate the manuscript. Then say what you did. Finally, summarize the main result, including salient numbers from data. This will be the last part of the paper you write just before final grammar check. This will be the \textbf{\Huge \textcolor{red}{seventh}} part of the paper you write.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+Read through the entire PDF. This will tell you in which order to write the paper with cardinal order defined in bold, large red letters.
+
+First some ground rules for labeling: sec for sections, fig for figures, tbl for tables.
+
+This will be the \textbf{\Huge \textcolor{red}{sixth}} part of the paper you write.
+
+Before you do anything here, you need to complete pre-writing:
+
+\begin{enumerate}
+\item Decide what is the story. Decide what are the figures.
+\item What are sections needed? What are the key citations?
+\item \textbf{You have not written a word yet at this stage. Just a sketch of the article on a piece of paper.}
+\item Figures. Use .eps for vector graphics. Use .tiff for scan data.
+\item Shared Zotero collection. Add all the key citations. Generate a .bib file.
+\item Go for a walk. Think about your competition.
+\item Prepare a competition table. List relevant parameters. Add needed references to Zotero collection.
+\item Scribble out a flowchart for the argument flow.
+\item Decide what are competing/contradictory references that a reviewer will ask about. Add them to Zotero.
+\item Go for another walk. Decide if you can address any of the weaknesses in the paper now and how much time it will take. If you can do these quickly, go back to the step on figures (add/modify).
+\end{enumerate}
+
+The moment you complete the pre-writing process, clear a full day from all distractions (social media, email, phone, etc), and write the entire paper in 6 hours. This will take 2.5-3 hours if you are putting together a Letters type manuscript. Your actual numbers in practice will be about 15\% higher than these estimates for your first paper, with the measure improving as you gain more experience.
+
+If you have more than one actively writing co-author, you both need to first share the Zotero collection. Then, depending on your preference, you can open a document on Google Docs, and set up a Zoom call while you co-write parts of the paper together in full markup simultaneously. Alternatively, you can push your part to GitHub and inform the other student/postdoc to do a git pull and proceed. If we are collaborating with a non-LaTeX using group, the Google Doc method might work better. The backup of using pandoc to convert back and forth always exists but that is more error prone.
+
+First step in the paper is to proceed to the results section. Once you come back to this section do the following:
+
+\begin{itemize}
+\item Paragraph one should prove the importance of the topic of your study with citations to recent (last 3-5 years) literature, especially review articles.
+\item Pararaph two should clearly establish the need statement for the study by clearly defining the open problem that needs addressing.
+\item Paragraph three should very briefly tell the audience what you have done (abstract style) and which approach you have followed (if that is useful to include).
+\end{itemize}
+
+Once you have done the above, and also written up an abstract, it is now time to do the following:
+
+\begin{enumerate}
+\item Cutting: Prune your sentences to increase information density. Grammarly will also help, but the first part must be done by you.
+\item Check for English\cite{burchfield:1998,strunk:2000}, and run it thoroughly through Grammarly.
+\item Create a github repo. Under settings of the new repo, under notifications, add your email address, and mine. What this will do is that as soon as some changes are pushed, everyone gets notified. GitHub currently allows only two email addresses.
+\item Commit the first verson and push.
+\item We go back and forth. The more carefully you have written the first draft, the faster this process should go.
+\item Format it for the target journal identified by both of us. At that point, send the draft out to all co-authors for comments. When a collaboration is involved, I will do this myself.
+\item Run a Turnitin check - remember - no repositories.
+\end{enumerate}
+
+\section{Methods}
+This will be the \textbf{\Huge \textcolor{red}{first}} part of the paper you write.
+
+In this section, clearly describe how you did your work. Create subsections for materials analysis, device fabrication, device characterization etc. The description should tersely state (within parenthesis) what tools were used, along with OEM names. In case of software/computational work, you must clearly state the algorithm used, along with any software specialized tools. Do NOT mention LabVIEW, Matlab, Python, or any such general purpose tools - that looks amateurish. Any protocols used must be cited. Do not repeat yourself - if you have previously published with a given method, cite your previous work instead of writing everything again.
+
+\section{Results}
+\label{sec:results}
+
+This will be the \textbf{\Huge \textcolor{red}{second}} part of the paper you write.
+
+First insert figures (Fig.~(\ref{fig:cv})) and tables. Make sure that your figures use appropriate colors, fonts, etc. \cite{mcnames:2006}. Your sentences describing your data scientifically must appear in text, and must never use reference to figures or tables except inside parenthesis. Why? When we talk to each other, we do not speak out references, we speak out ideas. In that sense, cross references and citations are ``underspeak'' that are present in citations, or in parenthesis. This has the additional merit of saving you writing space. 
+
+\begin{figure}
+\centering
+\subfigure[Measured capacitance as a function of area.]{\label{fig:ca}\includegraphics[scale=0.2,keepaspectratio]{example-image-a}}
+\subfigure[C(f) for different biases.]{\label{fig:cfv}\includegraphics[scale=0.2,keepaspectratio]{example-image-b}}
+\caption{(a) Use clear images, preferably in .eps form for anything other than scan data, and (b) .png form for scan data.}
+\label{fig:cv}
+\end{figure}
+
+\section{Discussion}
+\label{sec:discussion}
+
+This will be the \textbf{\Huge \textcolor{red}{fourth}} part of the paper you write. I have intentionally split it up because even in cases when this is not a separate section in your manuscript, you should write it after a break (writing acknowledgments) - there is a difference between a) what the data are, and b) what your data mean, in light of literature.
+
+This section is often combined with Sec.~(\ref{sec:results}). Sometimes, it is important to have it separate, especially when a fair bit of data analysis and interpretation is involved, and you need to place the discussion of the results in context of the existing literature. Whether to split or not is a personal choice, but is largely driven by how much do your results need to be compared and/or contrasted with literature. Very often, a comparison table between this work, and other studies will be placed here.
+
+This is also the place where you should criticize certain shortcomings of your own work. It is important to put that here to disarm overly critical reviewers.
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+This will be the \textbf{\Huge \textcolor{red}{fifth}} part of the paper you write. This serves as a precis of your discussion, but in terms of more pithy statements, and you should highlight what the results mean for the field. This is also the place where you talk about future work.
+
+\section*{Acknowledgments}
+
+This will be the \textbf{\Huge \textcolor{red}{third}} part of the paper you write. Immediately after you write about results, it should be easy to remember who helped you get those results.
+
+FA and TA (PhD fellowships) and PS (postdoc fellowship) acknowledge support from Ministry of Human Resource \& Development (MHRD). SA acknowledges support from University Grants Commission. CP acknowledges partial support from grant XYZ from Department of Science \& Technology. PS and CA acknowledges support from grant ABC from Department of Science \& Technology. All authors acknowledge facility access to Central Research Facility (CRF) and Nanoscale Research Facility (NRF, NNetra program) at IIT Delhi. Authors acknowledge technical assistance from Mr. Did Occasional Measurements/Process Runs of CRF.
+
+Authors FA, TA, PS and MS declare competing interest in the form of an Indian patent application (2021345678).
+
+\printbibliography
+
+\end{document}
