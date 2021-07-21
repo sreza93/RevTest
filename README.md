@@ -56,13 +56,14 @@ You will need the following tools in place on all your work machines to get star
 The recommended git workflow is as under (never deviate from this, holler if you need help):
 
 * When you are ready to push changes,
-	  ```git add <every file you made changes to>```
-	  ```git commit -m "<A brief one-sentence summary of the changes you made.>"```
-	  ```git push```
+
+		git add <every file you made changes to>
+		git commit -m "<A brief one-sentence summary of the changes you made.>"
+		git push
 
 * When I or any of your co-authors has pushed changes, and you need to get the latest version of the paper,
 
-		  ```git pull```
+		git pull
 
 As you get more familiar with git, you will learn more useful tricks. Under no conditions must you delete a file from the repo. Tampering with the commit history of a manuscript is malpractice and makes it impossible to track what changes you made when. If you are uncomfortable, learn.
 
