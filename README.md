@@ -3,6 +3,14 @@
 
 Read the following in detail to get started.
 
+## Using this repo
+
+1. Clone this repo using command line.
+1. Read through the contents if you need to. Generally, you will want to go through the included README (this file) and the PDF files in detail the first time.
+1. Rename the folder created by git clone to reflect the contents of your manuscript. If it is on measuring TCR for VO2 based photoresistors, it could be named VO2TCR. Call this DOCNAME.
+1. Rename IITD_manuscript.tex to DOCNAME.tex.
+1. Delete all other files. Start editing DOCNAME.tex.
+
 ## Prerequisite tools and configuration
 
 You will need the following tools in place on all your work machines to get started:
@@ -17,7 +25,7 @@ You will need the following tools in place on all your work machines to get star
 	  
 	  This will be a recurring theme: other tools you need to use also work better on a Linux/BSD or Mac platform. You are training to be a professional, switch to a professional OS. I understand that you may have some programs on Windows that you prefer to use, but that can be easily managed through the use of a VM: you can setup VMWare, or VirtualBox (free) or Qemu (free) with your favorite version of windows and use it when you need to. No, you do not need to buy a Mac - a laptop running elementary OS or Manjaro or Ubuntu or Debian (pick any) will do just fine. Modern Linux distros mostly work out of the box.
 
-1. A professional LaTeX IDE. There are a lot of really good ones, and the choice is a matter of your taste. I have been partial to [Atom](https://atom.io) in recent past, but have used [Kile](https://cgit.kde.org/kile.git/) and [Emacs](https://www.gnu.org/software/emacs/) in the past with excellent results.  Emacs is an extremely powerful behemoth of an editor (and many other things) that I used with LaTeX (and Fortran, Matlab, etc., especially during my own PhD) for years, and have now resumed using. There are many others that I have not used - pick any that works with your LaTeX installation. Get good at it.
+1. A professional LaTeX IDE. There are a lot of really good ones, and the choice is a matter of your taste. I have been partial to [Atom](https://atom.io) in recent past, but have used [Kile](https://cgit.kde.org/kile.git/) and [Emacs](https://www.gnu.org/software/emacs/) in the past with excellent results.  Emacs is an extremely powerful behemoth of an editor (and many other things) that I used with LaTeX (and Fortran, Matlab, etc., especially during my own PhD) for years, and have now resumed using (the name of the emacs package to install is called AucTeX). If you want a copy of my .emacs, ask. There are many others that I have not used - pick any that works with your LaTeX installation. Get good at it.
 
 1. A working Zotero account. You must have the following installed/configured:
 
@@ -33,7 +41,7 @@ You will need the following tools in place on all your work machines to get star
 	  * Step 2: Click on Join Your Organization button, fill up the self-service form. Ensure that users are registering from their respective official email id (@iitd.ac.in). You are requested to use your official email ID xx@iitd.ac.in without mentioning your Deptt/Centre name in the email ID and follow the steps given in the email.
 	  * Step 3: After clicking signup, an activation email will be sent to the user's institutional email ID.
 
-1. A working installation of [LangTool](https://languagetool.org/) is a standalone library for grammar checking that supports add-ons for specific IDEs. Depending on which IDE you choose, you can set up and configure this for use. [TeXtidote](https://github.com/sylvainhalle/textidote) is a possible interface that can be used for this purpose. Recommended use is through the commandline. This requires downloading a .jar file for langtool which contains the actual library.
+1. (Optional) A working installation of [LangTool](https://languagetool.org/) is a standalone library for grammar checking that supports add-ons for specific IDEs. Depending on which IDE you choose, you can set up and configure this for use. [TeXtidote](https://github.com/sylvainhalle/textidote) is a possible interface that can be used for this purpose. Recommended use is through the commandline. This requires downloading a .jar file for langtool which contains the actual library.
 
 1.  A working [Python installation](https://www.python.org). Consult the Internet to figure out how to install the latest version of Python for your platform. Once that is done, [install texsoup](https://github.com/alvinwan/TexSoup), [numpy](https://www.numpy.org), [pandas](https://pandas.pydata.org), [matplotlib](https://matplotlib.org), [python-docx](https://python-docx.readthedocs.io/en/latest/), [Jinja2](https://palletsprojects.com/p/jinja/), [openpyxl](https://foss.heptapod.net/openpyxl/openpyxl), [Pillow](https://pillow.readthedocs.io/en/stable/) and [reportlab](https://www.reportlab.com/opensource/). Packages in python are generally installed using pip (specifically pip3).
 
@@ -45,18 +53,21 @@ You will need the following tools in place on all your work machines to get star
 
 ## Git
 
-	The recommended git workflow is as under (never deviate from this, holler if you need help):
-	  * When you are ready to push changes,
+The recommended git workflow is as under (never deviate from this, holler if you need help):
+
+* When you are ready to push changes,
 	  ```git add <every file you made changes to>```
 	  ```git commit -m "<A brief one-sentence summary of the changes you made.>"```
 	  ```git push```
 
-	  * When I or any of your co-authors has pushed changes, and you need to get the latest version of the paper,
+* When I or any of your co-authors has pushed changes, and you need to get the latest version of the paper,
 
 		  ```git pull```
 
-	  As you get more familiar with git, you will learn more useful tricks. Under no conditions must you delete a file from the repo. Tampering with the commit history of a manuscript is malpractice and makes it impossible to track what changes you made when. If you are uncomfortable, learn.
-	  
+As you get more familiar with git, you will learn more useful tricks. Under no conditions must you delete a file from the repo. Tampering with the commit history of a manuscript is malpractice and makes it impossible to track what changes you made when. If you are uncomfortable, learn.
+
+* The only files you should include in the repo are your figures (.eps, .png), .tex source(s), .pdf (compiled from .tex). Do **not* add any auxillary files generated by running pdflatex.
+
 GitHub has of late deprecated https logins, and you should set up your ssh key using the [procedure they have outlined](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). For existing repos, you can convert them to ssh (from https they may have been earlier by default) using [these simple instructions](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
 
 Please note that a new ssh key is needed for each of your machines, and you have to save it to GitHub for it to recognize your push and pull attempts. If you use the same laptop everywhere, then doing the above exercise just once will suffice. If you have a different machine you use at your apartment, or hostel room, you will need to repeat the above exercise for those as well.
