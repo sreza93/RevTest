@@ -9,7 +9,7 @@ Read the following in detail to get started.
 1. Read through the contents if you need to. Generally, you will want to go through the included README (this file) and the PDF files in detail the first time.
 1. Rename the folder created by git clone to reflect the contents of your manuscript. If it is on measuring TCR for VO2 based photoresistors, it could be named VO2TCR. Call this DOCNAME.
 1. Rename IITD_manuscript.tex to DOCNAME.tex.
-1. Delete all other files. Start editing DOCNAME.tex.
+1. Delete all other files, including .git. Start editing DOCNAME.tex.
 
 ## Prerequisite tools and configuration
 
