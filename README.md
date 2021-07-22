@@ -9,7 +9,29 @@ Read the following in detail to get started.
 1. Read through the contents if you need to. Generally, you will want to go through the included README (this file) and the PDF files in detail the first time.
 1. Rename the folder created by git clone to reflect the contents of your manuscript. If it is on measuring TCR for VO2 based photoresistors, it could be named VO2TCR. Call this DOCNAME.
 1. Rename IITD_manuscript.tex to DOCNAME.tex.
-1. Delete all other files, including .git. Start editing DOCNAME.tex.
+1. Delete all other files, including .git. 
+1. Go to GitHub via the web interface, and create a new private repo with the name DOCNAME. If it is not available, then you will need to change DOCNAME for the folder and disk. Maybe VO2TCRPhotoresistor in the above example. Don't use a dumb name like VO2TCR1 (does 1 have anything to do with the contents of the manuscript?) or VO2TCRAPL (Does APL have anything to do with the contents of the manuscript?). The name has to reflect the contents.
+1. Go to settings for the repo and add your email address and mine to the notifications.
+1. Come back to your DOCNAME folder on your machine.
+1. Initialize the repo and set the branch:
+
+		git init
+		git branch -M main
+		
+1. Do the initial commit:
+
+		git commit -m "Initial commit. Blank manuscript"
+		
+1. Tell it where the remote repo lives:
+
+		git remote add origin git@github.com:FMDLab/DOCNAME.git
+		
+1. Push to the main branch to remote:
+
+		git push origin -u main
+
+1. Go to GitHub web interface and confirm that indeed DOCNAME.tex has been pushed there.
+1. Come back to your machine, and start editing DOCNAME.tex. After this, you can use this as a normal repo using the workflow below.
 
 ## Prerequisite tools and configuration
 
