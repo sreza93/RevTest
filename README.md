@@ -37,7 +37,7 @@ Read the following in detail to get started.
 
 You will need the following tools in place on all your work machines to get started:
 
-1. A github account that I have correctly linked to our lab's github repos. Set up a free account on github an contact me. Chances are that if you are able to read this online, you are already set.
+1. A github account that I have correctly linked to our lab's github repos. Set up a free account on github and send me your GitHub username. Chances are that if you are able to read this online, you are already set.
 
 1. A working [LaTeX TeXLive installation](https://www.tug.org/texlive/), either on Linux (depends on your distro, see [instructions for Debian Linux](https://wiki.debian.org/Latex)) or [on Mac OSX](http://www.tug.org/mactex/), updated to the latest version at the time you read this.
 
@@ -252,10 +252,9 @@ Every call to ````uigetfile```` is a sign of laziness and paying for that lazine
   Code **everything** in between. Yes, it is possible. What you think needs human intervention, actually doesn’t. Think before you waste more of your time and mine. The math works this way (time units are arbitrary, but indicative of relative magnitudes):
 
   | Style of coding | Time taken in function design and coding | Time taken in debugging | Time taken in production/use | Time taken for publication graphics |
-  ---|---|---|---|
   |Use scripts, editing as needed for each dataset | 10 | 10 | 100 | 1000
   |Use functions, with thoughtfully selected input and output arguments that transfer maximal information efficiently, and produces publication quality plots | 1000 | 100 | 1 | 100 |
-  ---|---|---|---|
+  ---|---|---|---|---|
 
   Let us say you do about 4 experiments a week, over 3 months, to produce one paper with 6 figures. Let us also assume that debugging is needed for the first 4 experiments (as anything coded does).
 
