@@ -6,6 +6,9 @@ Read the following in detail to get started.
 ## Using this repo
 
 1. Clone this repo using command line.
+
+		git clone git@github.com:FMDLab/manuscript.git
+		
 1. Read through the contents if you need to. Generally, you will want to go through the included README (this file) and the PDF files in detail the first time.
 1. Rename the folder created by git clone to reflect the contents of your manuscript. If it is on measuring TCR for VO2 based photoresistors, it could be named VO2TCR. Call this DOCNAME.
 1. Rename IITD_manuscript.tex to DOCNAME.tex.
@@ -255,7 +258,6 @@ Every call to ````uigetfile```` is a sign of laziness and paying for that lazine
   ---|---|---|---|---|
   |Use scripts, editing as needed for each dataset | 10 | 10 | 100 | 1000
   |Use functions, with thoughtfully selected input and output arguments that transfer maximal information efficiently, and produces publication quality plots | 1000 | 100 | 1 | 100 |
-  ---|---|---|---|---|
 
   Let us say you do about 4 experiments a week, over 3 months, to produce one paper with 6 figures. Let us also assume that debugging is needed for the first 4 experiments (as anything coded does).
 
