@@ -252,6 +252,7 @@ Every call to ````uigetfile```` is a sign of laziness and paying for that lazine
   Code **everything** in between. Yes, it is possible. What you think needs human intervention, actually doesn’t. Think before you waste more of your time and mine. The math works this way (time units are arbitrary, but indicative of relative magnitudes):
 
   | Style of coding | Time taken in function design and coding | Time taken in debugging | Time taken in production/use | Time taken for publication graphics |
+  ---|---|---|---|---|
   |Use scripts, editing as needed for each dataset | 10 | 10 | 100 | 1000
   |Use functions, with thoughtfully selected input and output arguments that transfer maximal information efficiently, and produces publication quality plots | 1000 | 100 | 1 | 100 |
   ---|---|---|---|---|
