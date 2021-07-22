@@ -21,6 +21,10 @@ Read the following in detail to get started.
 		git init
 		git branch -M main
 		
+1. Add DOCNAME.tex to the repo:
+
+		git add DOCNAME.tex
+		
 1. Do the initial commit:
 
 		git commit -m "Initial commit. Blank manuscript"
