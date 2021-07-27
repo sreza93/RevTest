@@ -74,8 +74,6 @@ This is like a conference abstract, but shorter. No use of acronymns allowed. Br
 
 Read through the entire PDF. This will tell you in which order to write the paper with cardinal order defined in bold, large red letters.
 
-First some ground rules for labeling: sec for sections, fig for figures, tbl for tables.
-
 This will be the \textbf{\Huge \textcolor{red}{sixth}} part of the paper you write.
 
 Before you do anything here, you need to complete pre-writing:
@@ -137,6 +135,51 @@ First insert figures (Fig.~(\ref{fig:cv})) and tables. Make sure that your figur
 \label{fig:cv}
 \end{figure}
 
+The label in Fig.~(\ref{fig:cv}) is an example of a cross-reference. You \textbf{never} use absolute references in a document (like \verb|Fig.~1|). The reason for this ought to be obvious - while you author a text, things can move around, and you do not want to keep track of what moves where. \LaTeX\ is supposed to take care of that - not you. You can make mistakes, and mistakes can be costly.
+
+An equation can be similarly labelled:
+
+\begin{align}
+  E^{2} = p^{2} c^{2} + m_{0}^{2} c^{4} \label{eqn:relativistic4vector}
+\end{align}
+
+Not all equations need labels like Eq.~(\ref{eqn:relativistic4vector}) of course:
+
+\begin{align}
+  E & = h\nu \nonumber \\
+  & \equiv \frac{h c}{\lambda} \label{eqn:plancksrelationship}
+\end{align}
+
+In labeling (and referencing equations), be conservative. Label only those specific (and few) equations that you are actually going to use. Remember - any text can be made to look more inaccessible by involving more math. You should not show all steps in a paper, just the important ones that help you make your point. Needless to add, all your analytical calculations should be cross-checked with Maxima or Mathematica before it gets on your manuscript.
+
+Tables can be similarly cross-referenced as shown in Table~\ref{tbl:ratio}.
+
+\begin{table}
+  \caption{An example table}
+  \label{tbl:ratio}
+  \begin{center}
+    \begin{tabular}{cccccc}
+      x  & Thickness & & \multicolumn{3}{c}{Composition: EDX and (XPS)} \\
+      \hline \\
+         & (nm) & & K/A & Na/A & Nb/A \\
+      \hline \\
+      0.3 & 62 $\pm$ 4 & & 0.365 $\pm 2\%$ & 0.634 $\pm 2\%$ & 1.036 $\pm 2\%$ \\
+         & & & (0.3375) & (0.6624) & (1.028) \\
+      \hline \\
+      0.5 & 70 $\pm$ 2 & & 0.510 $\pm 2\%$ & 0.489 $\pm 2\%$ & 0.937 $\pm 2\%$ \\
+         & & & (0.5091) & (0.4910) & (1.037) \\
+      \hline \\
+      0.7 & 68 $\pm$ 2 & & 0.718 $\pm 2\%$ & 0.281 $\pm 2\%$ & 0.928 $\pm 2\%$ \\
+         & & & (0.7682) & (0.2317) & (1.153) \\
+      \hline \\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Needless to add, you need to pick labels that reflect the contents of the object being referenced.
+
+Notice some ground rules for labeling: sec for sections, fig for figures, tbl for tables. This convention, that I follow in my documents, helps distinguish between the objects that are being referenced. It is for your own benefit of course.
+
 \section{Discussion}
 \label{sec:discussion}
 
@@ -155,7 +198,7 @@ This will be the \textbf{\Huge \textcolor{red}{fifth}} part of the paper you wri
 
 This will be the \textbf{\Huge \textcolor{red}{third}} part of the paper you write. Immediately after you write about results, it should be easy to remember who helped you get those results.
 
-FA and TA (PhD fellowships) and PS (postdoc fellowship) acknowledge support from Ministry of Human Resource \& Development (MHRD). SA acknowledges support from University Grants Commission. CP acknowledges partial support from grant XYZ from Department of Science \& Technology. PS and CA acknowledges support from grant ABC from Department of Science \& Technology. All authors acknowledge facility access to Central Research Facility (CRF) and Nanoscale Research Facility (NRF, NNetra program) at IIT Delhi. Authors acknowledge technical assistance from Mr. Did Occasional Measurements/Process Runs of CRF.
+FA and TA (PhD fellowships) and PS (postdoc fellowship) acknowledge support from Ministry of Human Resource \& Development (MHRD). SA acknowledges support from University Grants Commission. CP acknowledges partial support from grant XYZ from Department of Science \& Technology. PS and MS acknowledges support from grant ABC from Department of Science \& Technology. All authors acknowledge facility access to Central Research Facility (CRF) and Nanoscale Research Facility (NRF, NNetra program) at IIT Delhi. Authors acknowledge technical assistance from Mr. Did Occasional Measurements/Process Runs of CRF.
 
 Authors FA, TA, PS and MS declare competing interest in the form of an Indian patent application (2021345678).
 
