@@ -2,7 +2,10 @@
 % arara: biber
 % arara: pdflatex
 
+% I am sorry to have to point this out, but you cannot make any changes to the PREAMBLE of this document. It is intentionally designed to keep things generic enough so that this manuscript can be subsequently reformatted to specific journal templates/class files with minimal fuss. For initial submissions, most journals will need just the PDF file (this format) for first round of review. If there is a package you absolutely need to add, you can, but only after ensuring that you cannot live without it. Places in the preamble where you are allowed to make changes are explicitly marked with comments.
+
 \documentclass[12 pt]{article}
+% PREAMBLE starts here.
 
 \usepackage[margin=1in,footskip=0.25in]{geometry}
 \usepackage{longtable}
@@ -10,6 +13,7 @@
 \usepackage{setspace}
 \usepackage{textcomp}
 \usepackage{gensymb}
+\usepackage{physics}
 \doublespacing
 \usepackage{subfigure}
 \usepackage{float}
@@ -20,14 +24,14 @@
 \usepackage{romannum}
 
 \usepackage[backend=biber, isbn=false, url=false, uniquename=init, terseinits=true, hyperref=true, doi=false, style=numeric, defernumbers=false, autocite=plain, sorting=none]{biblatex}
-\addbibresource{publishing.bib}
+\addbibresource{publishing.bib} % Replace this with the name of your .bib file.
 \usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
 % \renewcommand{\finentrypunct}{
 %   \addperiod\space
 %   (Cited \arabic{citecounter}~time\ifnumequal{\value{citecounter}}{1}{}{s})%
 %  }
 \usepackage{hyperref}
-%\graphicspath{{./graphics/}} % Add this if needed.
+%\graphicspath{{./graphics/}} % Add this if needed. Replace graphics with Figures if that is the name of your folder.
 
 
 \setlength{\marginparwidth}{2cm}\usepackage[colorinlistoftodos]{todonotes}
@@ -52,17 +56,22 @@
 
 \doublespacing
 
+% In the title, author and affil directives before, enter your details. Of course, the number of authors and affils can vary - comment out whatever you are not using/add more if needed.
+
 \title{Preparing a manuscript for a peer-reviewed journal the FMDL way}
-\author[1]{\small First Author}
-\author[2]{\small Second Author}
-\author[1]{\small Third Author}
-\author[1]{\small Postdoc Scholar}
-\author[2]{\small Collaborating PI}
-\author[1]{\small Madhusudan Singh\thanks{msingh@ee.iitd.ac.in}}
-\affil[1]{\footnotesize Functional Materials \& Devices Laboratory, Department of Electrical Engineering, IIT Delhi, New Delhi, NCT, India, 110 016.}
-\affil[2]{\footnotesize Department of Chemistry, IIT Delhi, New Delhi, NCT, India, 110 016.}
+\author[1]{\small First Author} % ORCID ID of the first author
+\author[2]{\small Second Author}  % ORCID ID of the second author
+\author[1]{\small Third Author}  % ORCID ID of the third author
+\author[1]{\small Postdoc Scholar}  % ORCID ID of the postdoc involved
+\author[2]{\small Collaborating PI}  % ORCID ID of the collaborating PI
+\author[1]{\small Madhusudan Singh\thanks{msingh@ee.iitd.ac.in}}  % ORCID ID: 0000-0001-5430-1405
+\affil[1]{\footnotesize Functional Materials \& Devices Laboratory, Department of Electrical Engineering, IIT Delhi, New Delhi, NCT, India, 110 016.} % Our lab - will remain untouched.
+\affil[2]{\footnotesize Department of Chemistry, IIT Delhi, New Delhi, NCT, India, 110 016.} % Change/comment out as needed
 
 \date{}
+
+% PREAMBLE ends here
+
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -129,9 +138,9 @@ First insert figures (Fig.~(\ref{fig:cv})) and tables. Make sure that your figur
 
 \begin{figure}
 \centering
-\subfigure[Measured capacitance as a function of area.]{\label{fig:ca}\includegraphics[scale=0.2,keepaspectratio]{example-image-a}}
-\subfigure[C(f) for different biases.]{\label{fig:cfv}\includegraphics[scale=0.2,keepaspectratio]{example-image-b}}
-\caption{(a) Use clear images, preferably in .eps form for anything other than scan data, and (b) .png form for scan data.}
+\subfigure[Measured capacitance as a function of area.]{\label{fig:ca}\includegraphics[width=88mm,keepaspectratio]{example-image-a}}
+\subfigure[C(f) for different biases.]{\label{fig:cfv}\includegraphics[width=88mm,keepaspectratio]{example-image-b}}
+\caption{(a) Use clear images, preferably in .eps form for anything other than scan data, and (b) .png form for scan data. The width of the figure is chosen to be 88mm since that is the typical width of a journal column in two-column format. Your figures must be clear to read easily at this size. If your figure is too wide to fit in this width, you can use the figure* environment, but that is done only in very rare cases where the figure is really complex.}
 \label{fig:cv}
 \end{figure}
 
@@ -150,7 +159,7 @@ Not all equations need labels like Eq.~(\ref{eqn:relativistic4vector}) of course
   & \equiv \frac{h c}{\lambda} \label{eqn:plancksrelationship}
 \end{align}
 
-In labeling (and referencing equations), be conservative. Label only those specific (and few) equations that you are actually going to use. Remember - any text can be made to look more inaccessible by involving more math. You should not show all steps in a paper, just the important ones that help you make your point. Needless to add, all your analytical calculations should be cross-checked with Maxima or Mathematica before it gets on your manuscript.
+In labeling (and referencing equations), be conservative. Label only those specific (and few) equations that you are actually going to use. Remember - any text can be made to look more inaccessible by involving more math. You should not show all steps in a paper, just the important ones that help you make your point. Needless to add, all your analytical calculations should be cross-checked with Maxima or Mathematica before it gets on your manuscript draft. No, you need to do that now. A neat trick in Mathematica is the use of \verb|TeXForm[]| function to output \LaTeX\ formatted code for the math. This may save you a lot of time, and transcription errors.
 
 Tables can be similarly cross-referenced as shown in Table~\ref{tbl:ratio}.
 
@@ -188,6 +197,49 @@ This will be the \textbf{\Huge \textcolor{red}{fourth}} part of the paper you wr
 This section is often combined with Sec.~(\ref{sec:results}). Sometimes, it is important to have it separate, especially when a fair bit of data analysis and interpretation is involved, and you need to place the discussion of the results in context of the existing literature. Whether to split or not is a personal choice, but is largely driven by how much do your results need to be compared and/or contrasted with literature. Very often, a comparison table between this work, and other studies will be placed here.
 
 This is also the place where you should criticize certain shortcomings of your own work. It is important to put that here to disarm overly critical reviewers.
+
+\begin{table}
+  \caption{An example table}
+  \label{tbl:ratio}
+  \begin{center}
+    \begin{tabular}{cccccc}
+      x  & Thickness & & \multicolumn{3}{c}{Composition: EDX and (XPS)} \\
+      \hline \\
+         & (nm) & & K/A & Na/A & Nb/A \\
+      \hline \\
+      0.3 & 62 $\pm$ 4 & & 0.365 $\pm 2\%$ & 0.634 $\pm 2\%$ & 1.036 $\pm 2\%$ \\
+         & & & (0.3375) & (0.6624) & (1.028) \\
+      \hline \\
+      0.5 & 70 $\pm$ 2 & & 0.510 $\pm 2\%$ & 0.489 $\pm 2\%$ & 0.937 $\pm 2\%$ \\
+         & & & (0.5091) & (0.4910) & (1.037) \\
+      \hline \\
+      0.7 & 68 $\pm$ 2 & & 0.718 $\pm 2\%$ & 0.281 $\pm 2\%$ & 0.928 $\pm 2\%$ \\
+         & & & (0.7682) & (0.2317) & (1.153) \\
+      \hline \\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+\subsection{Naming things}
+
+There is an underlying philosophy to the way we do manuscripts in the lab - regardless of what it is, the name of the repo (already addressed in the README file), file, section, figure file, label to a figure, label to an equation, label to a table, etc. \textbf{\Huge \textcolor{red}{must reflect the contents of whatever is being referenced or named}}. Hopefully, Table~(\ref{tbl:namingthings}) will serve as a useful rolodex - it is not complete, but it is strongly indicative.
+
+\begin{center}
+  \begin{longtable}{|p{3cm}|p{5cm}|p{3.5cm}|p{2.5cm}|}
+    \caption{Naming things. Mandatory parts of the string in the name/label are in blue color. DOCNAME refers to the usage in the README file of this repo.} \label{tbl:namingthings}\\
+    \hline
+    \textbf{Entity}  & \textbf{Purpose of the entity} &  \textbf{Good usage} & \textbf{Examples of poor choices} \\\hline
+    Label to an equation & To label an equation so that it can be used in a cross-reference & \textcolor{blue}{eqn:}energyofparticle & Eq12, importantequation \\\hline
+    Label to a figure & To label a figure so that it can be used in a cross-reference & \textcolor{blue}{fig:}JVdata & Fig1 \\\hline
+    Label to a table & To label a table so that it can be used in a cross-reference & \textcolor{blue}{tbl:}ratio & Table1, reallyimportantsummary \\\hline
+    Label to a section & To label a section in the document so that it can be used in a cross-reference & \textcolor{blue}{sec:}discussion & Sec1 \\\hline
+    Name of a figure file & To name a figure file that can be subsequently called in includegraphics markup & JVdata.eps & Fig1b.eps, firstfigure.eps\\\hline
+    Name of the bibliography file & To name the .bib file that you will be using in this document & \textcolor{blue}{DOCNAME.bib} & references.bib \\\hline
+  \end{longtable}
+\end{center}
+
+It should be quite obvious why we follow the naming convention the way we do. If you choose to violate instructions provided in this document and the overall repo, please do us both the favor of not publishing. I do not care how good your science is, but if you cannot be bothered to use rational, common sense-based, \textbf{consistent and systematic} methods to communicate your science, you: a) are not a good scientist, and b) your communicated science will not make an impact anywhere. Good scientists are systematic, cautious, thorough, sceptical, thoughtful, and organized in a manner that makes machines look human by comparison. Yes, OCD is an occupational hazard in our business. Careful people show care and forethought in everything they can.
 
 \section{Conclusions}
 \label{sec:conclusions}
