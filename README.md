@@ -309,7 +309,7 @@ The soul of a paper are its figures. These are what are done first after identif
 
 ### Video supplementary data
 
-Some manuscripts naturally involve the use of video. In such a case, you should prepare MPEG-4 video (H.264 codec) wit compression settings designed to produce a file smaller than about 2-3 MB in size. Typically, long animations, or videos do not much make sense. Please do not push large files (such as multimedia) on GitHub if they exceed about 5 MB in size. Nice tools for this purpose are ffmpeg, HandBrake, etc.
+Some manuscripts naturally involve the use of video. In such a case, you should prepare MPEG-4 video (H.264 codec) with compression settings designed to produce a file smaller than about 2-3 MB in size. Typically, long animations, or videos do not much make sense. Please do not push large files (such as multimedia) on GitHub if they exceed about 5 MB in size. Nice tools for this purpose are ffmpeg, HandBrake, etc.
 
 ## Use of pre-print archives
 
