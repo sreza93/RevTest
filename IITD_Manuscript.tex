@@ -81,7 +81,7 @@ This is like a conference abstract, but shorter. No use of acronymns allowed. Br
 \section{Introduction}
 \label{sec:introduction}
 
-Read through the entire PDF. This will tell you in which order to write the paper with cardinal order defined in bold, large red letters.
+Read through the entire PDF. This will tell you in which order to write the paper with cardinal order defined in bold, large red letters. You also need to pay attention to the comments in the .tex file associated with this PDF.
 
 This will be the \textbf{\Huge \textcolor{red}{sixth}} part of the paper you write.
 
@@ -185,10 +185,6 @@ Tables can be similarly cross-referenced as shown in Table~\ref{tbl:ratio}.
   \end{center}
 \end{table}
 
-Needless to add, you need to pick labels that reflect the contents of the object being referenced.
-
-Notice some ground rules for labeling: sec for sections, fig for figures, tbl for tables. This convention, that I follow in my documents, helps distinguish between the objects that are being referenced. It is for your own benefit of course.
-
 \section{Discussion}
 \label{sec:discussion}
 
@@ -197,28 +193,6 @@ This will be the \textbf{\Huge \textcolor{red}{fourth}} part of the paper you wr
 This section is often combined with Sec.~(\ref{sec:results}). Sometimes, it is important to have it separate, especially when a fair bit of data analysis and interpretation is involved, and you need to place the discussion of the results in context of the existing literature. Whether to split or not is a personal choice, but is largely driven by how much do your results need to be compared and/or contrasted with literature. Very often, a comparison table between this work, and other studies will be placed here.
 
 This is also the place where you should criticize certain shortcomings of your own work. It is important to put that here to disarm overly critical reviewers.
-
-\begin{table}
-  \caption{An example table}
-  \label{tbl:ratio}
-  \begin{center}
-    \begin{tabular}{cccccc}
-      x  & Thickness & & \multicolumn{3}{c}{Composition: EDX and (XPS)} \\
-      \hline \\
-         & (nm) & & K/A & Na/A & Nb/A \\
-      \hline \\
-      0.3 & 62 $\pm$ 4 & & 0.365 $\pm 2\%$ & 0.634 $\pm 2\%$ & 1.036 $\pm 2\%$ \\
-         & & & (0.3375) & (0.6624) & (1.028) \\
-      \hline \\
-      0.5 & 70 $\pm$ 2 & & 0.510 $\pm 2\%$ & 0.489 $\pm 2\%$ & 0.937 $\pm 2\%$ \\
-         & & & (0.5091) & (0.4910) & (1.037) \\
-      \hline \\
-      0.7 & 68 $\pm$ 2 & & 0.718 $\pm 2\%$ & 0.281 $\pm 2\%$ & 0.928 $\pm 2\%$ \\
-         & & & (0.7682) & (0.2317) & (1.153) \\
-      \hline \\
-    \end{tabular}
-  \end{center}
-\end{table}
 
 
 \subsection{Naming things}
@@ -238,6 +212,10 @@ There is an underlying philosophy to the way we do manuscripts in the lab - rega
     Name of the bibliography file & To name the .bib file that you will be using in this document & \textcolor{blue}{DOCNAME.bib} & references.bib \\\hline
   \end{longtable}
 \end{center}
+
+Needless to add, you need to pick labels that reflect the contents of the object being referenced.
+
+Notice some ground rules for labeling: sec for sections, fig for figures, tbl for tables. This convention, that I follow in my documents, helps distinguish between the objects that are being referenced. It is for your own benefit of course.
 
 It should be quite obvious why we follow the naming convention the way we do. If you choose to violate instructions provided in this document and the overall repo, please do us both the favor of not publishing. I do not care how good your science is, but if you cannot be bothered to use rational, common sense-based, \textbf{consistent and systematic} methods to communicate your science, you: a) are not a good scientist, and b) your communicated science will not make an impact anywhere. Good scientists are systematic, cautious, thorough, sceptical, thoughtful, and organized in a manner that makes machines look human by comparison. Yes, OCD is an occupational hazard in our business. Careful people show care and forethought in everything they can.
 
