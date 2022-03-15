@@ -40,6 +40,18 @@ Read the following in detail to get started.
 1. Go to GitHub web interface and confirm that indeed DOCNAME.tex has been pushed there.
 1. Come back to your machine, and start editing DOCNAME.tex. After this, you can use this as a normal repo using the workflow below.
 
+## Content of the repo
+
+The repo contains several folders (each contains a README file that tells you what to put where). I am describing what goes where:
+
+1. Root folder (DOCNAME/): Your LaTeX markup (.tex) file, and any generated PDF file (.pdf).
+1. Figures folder (DOCNAME/figures/): Your figures in the permitted formats (see below, including any .tex sources for TikZ illustrations). During manuscript preparation the file names of the figures must reflect their contents. Your figure files must 
+1. Data folder (DOCNAME/data/): Your data, in ASCII form (such as .csv, etc.). No binary blobs (such as xls, xlss, ods, opj, etc.). Plain text. Every plot in the Figures folder must correspond to a data file here. If some data cannot be converted to plain text, email me prior to pushing changes and explain why it cannot be done. The name of data files must reflect the contents and follow the following convention: Date_ToolOrMeasurement_CommentText such as device number, or repetition number>.txt (or .csv) - more on this below. Your file name must *not* contain any spaces, or any special characters other than underscore(_). For . (such 0.25), use p (0p25). Any changes to plots must be accompanied by a change in the contents of the data folder.
+1. Code folder (DOCNAME/code/): Your analysis code in .py or .m form that you have used for parameter extraction, analysis, or plot generation. No binary blobs (such as .exe, .out, etc.). Shell scripts written in plain text with the extension .sh are acceptable. In combination with data in Data folder, I should be able to generate Figures files in the Figures folder by using your code, on my own. The Figure names may or may not match the data file names used to generate them.
+1. Acceptance folder (DOCNAME/acceptance_files): This will contain any final files that are submitted to the Journal upon acceptance, or high likelihood of acceptance. I will advise you to populate it once we reach that stage in peer-review.
+
+You are not allowed to delete **any** documents above once created. They can only be modifed in place, or in the case of data files, added.
+
 ## Prerequisite tools and configuration
 
 You will need the following tools in place on all your work machines to get started:
@@ -198,6 +210,8 @@ For Patents, this again may need to be done manually for Indian patents and pate
 
 ## Scientific Graphics
 
+All code developed here must go to the code subfolder.
+
 We do not use Microsoft Excel at all in our group, nor does anyone who does scientific plots for a living. Microcal Origin is used in some related disciplines (especially Chemistry and Devices), but compared to Matlab/Python, it is a waste of time since each plot has to be replotted, and there is comparatively little availability of the data analysis and reduction that is possible otherwise. If you have an Origin (or a general WYSIWYG) habit, please get rid of it.
 
 All scientific graphics, excepting scan data (such as AFM, SEM, TEM, etc.) must always be output in a [vector graphics](https://en.wikipedia.org/wiki/Vector_graphics) format. EPS (.eps), PDF(.pdf) and TikZ (.tex) files are typically used. Scan data is usually submitted in TIFF format (which is a bimap/raster format). JPEG is a lossy format and is almost never used. PNG (.png) images can be useful for making associated presentations. Consult the journal's webpage when finalizing the figures for resolution requirements.
@@ -213,6 +227,8 @@ This option makes certain that the same fonts are used for plots as are used in 
 The best thing to do? Please use Matlab or Python as a matter of habit for your routine data. Create functions (not scripts).
 
 ### Data
+
+All data reported in the manuscript must go to the data subfolder.
 
 This part is not necssarily directly related to the business of writing a manuscript but directly impacts it. Whenever you save any data from an experiment, be it in NRF, CRF, or wherever, you *must* do the following:
 
