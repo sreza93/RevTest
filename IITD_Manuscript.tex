@@ -16,23 +16,26 @@
 \usepackage{textcomp}
 \usepackage{gensymb}
 \usepackage{physics}
+\usepackage{array}
 \doublespacing
 \usepackage{subfigure}
 \usepackage{float}
 %\usepackage{caption}
 \usepackage[version=4]{mhchem}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{authblk}
 \usepackage{romannum}
 \usepackage{caption} % For Table of Contents entry
 
 \usepackage[backend=biber, isbn=false, url=false, uniquename=init, terseinits=true, hyperref=true, doi=false, style=numeric, defernumbers=false, autocite=plain, sorting=none]{biblatex}
 \addbibresource{publishing.bib} % Replace this with the name of your .bib file.
-\usepackage[separate-uncertainty = true,multi-part-units=single]{siunitx}
+\usepackage[separate-uncertainty = true,multi-part-units=single,per-mode=symbol]{siunitx}
 \DeclareSIUnit{\Molar}{M}
 \DeclareSIPrefix\micro{\text{\textmu}}{-3}
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\gauss{G}
+\DeclareSIUnit\sq{\ensuremath{\Box}}
 
 \input{common/common} % To be commented out prior to submission.
 
@@ -58,6 +61,13 @@
 \affil[1]{\footnotesize Functional Materials \& Devices Laboratory, Department of Electrical Engineering, IIT Delhi, New Delhi, NCT, India, 110 016.} % Our lab - will remain untouched.
 \affil[2]{\footnotesize Department of Chemistry, IIT Delhi, New Delhi, NCT, India, 110 016.} % Change/comment out as needed
 
+% Please enter information on potential reviewers below (at least 5, none from any of the co-author's affiliations, and none from IIT Delhi whatsoever.):
+% Reviewer 1: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 2: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 3: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 4: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 5: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+
 \date{}
 
 \begin{document}
@@ -66,6 +76,30 @@
 This part is like a conference abstract, but shorter. No use of acronymns allowed. Briefly (one sentence), motivate the manuscript. Then say what you did. Finally, summarize the main result, including salient numbers from data. This will be the last part of the paper you write just before final grammar check. This will be the \textbf{\Huge \textcolor{red}{seventh}} part of the paper you write.
 \end{abstract}
 
+%%%%% DO-NOT-DELETE BLOCK STARTS %%%%
+
+\textcolor{purple}{\textsc{Checklist for you to follow before sending me the any draft (DO NOT DELETE until we are ready to submit this):
+\begin{enumerate}
+\item Have you read the \textbf{entire} README file in the manuscript repo?
+\item Have you read the PDF corresponding to this template file in the manuscript repo?
+\item Are your figures legible when reduced to 85 mm width in two column format?
+\item Have you ensured that the enumerate environment, if used in your manuscript, does not contain any absolute references?
+\item Have you ensured that you are using exactly zero absolute references when referring to figures, tables, etc.? If you see usage like "Fig.~(1)", I will refuse to entertain the manuscript any further. Lose any brain dead Microsoft Word habits you might have.
+\item Have you ensured that you are not using any figure placement modifiers like "h", "t", etc. Please lose any brain dead Microsoft Word habits you might have. \textbf{\LaTeX\ } decide where each figure will go. No, let it decide and get your meddling fingers away from document beautification and focus on the \textbf{content}. 
+\item Does the shared Zotero collection under your shared collection contain all the citations in this manuscript?
+\item Has the shared Zotero collection been set to auto-export to the .bib file you added to the repo?
+\item Has this manuscript passed Grammarly with at least 99\% rating? The settings are described in the README in the manuscript repo.
+\item Have you increased the information density to the highest level possible using techniques I have taught you? This will involve a lot of cutting.
+\item Have you run Grammarly after doing the cutting, ensuring 99\% rating again?
+\item Has every deserving co-author been listed, and their ORCID id provided in comments in the \LaTeX\ source?
+\item Have you acknowledged everyone non co-author that helped you, under the acknowledgment section?
+\item Have you listed at least 5 potential reviewers for this manuscript above in comments in the \LaTeX\ source?
+\end{enumerate}
+}
+}
+
+%%%%% DO NOT DELETE BLOCK ENDS %%%%
+  
 \section{Introduction}
 \label{sec:introduction}
 
@@ -79,7 +113,7 @@ Before you do anything here, you need to complete pre-writing:
 \item Decide what is the story. Decide what are the figures.
 \item What are sections needed? What are the key citations?
 \item \textbf{You have not written a word yet at this stage. Just a sketch of the article on a piece of paper.}
-\item Figures. Use .eps for vector graphics. Use .tiff for scan data.
+\item Figures. Use .eps for vector graphics. Use .tiff for scan data. For initial submission, please ensure that your figures do not exceed 1 MB in size or so. Scale down. You can use docupub to compress pdfs. High resolution images will be needed after acceptance of the manuscript.
 \item Shared Zotero collection. Add all the key citations. Generate a .bib file.
 \item Go for a walk. Think about your competition.
 \item Prepare a competition table. List relevant parameters. Add needed references to Zotero collection.
@@ -108,7 +142,9 @@ Once you have done the above, and also written up an abstract, it is now time to
 \item Create a github repo. Under settings of the new repo, under notifications, add your email address, and mine. What this will do is that as soon as some changes are pushed, everyone gets notified. GitHub currently allows only two email addresses.
 \item Commit the first verson and push.
 \item We go back and forth. The more carefully you have written the first draft, the faster this process should go.
-\item Format it for the target journal identified by both of us. At that point, send the draft out to all co-authors for comments. When a collaboration is involved, I will do this myself.
+\item Format it for the target journal identified by both of us. As soon as the decision regarding a journal has been made, go to that journal's website, and view the guide for authors on their webpage. There is usually a submission checklist document located under guide for authors which tells you what kind of documents are needed. Please create them all.
+\item Commit and push. I will view this draft and do some final checks, and prepare the cover letter.
+\item Once I push the updated version with the cover letter, and if no major changes are needed, send the draft out to all co-authors for comments. When a collaboration is involved, I will do this myself.
 \item Run a Turnitin check - remember - no repositories.
 \end{enumerate}
 
@@ -249,9 +285,9 @@ Authors FA, TA, PS and MS declare competing interest in the form of an Indian pa
 \printbibliography
 
 \clearpage
-\section*{Table of Contents}
+\section*{Graphical table of contents}
 
-% Most good journals require a table of contents entry (this is somewhat discipline and society dependent as well). The purpose of this is an advertisement for your article on the website of the journal. Ordinarily, this will be a separate document, but it is being included here as a separate section so that we can go through drafting of your article without worrying about edits in different files.
+% Most good journals require a graphical "table" of contents entry (this is somewhat discipline and society dependent as well). The purpose of this is an advertisement for your article on the website of the journal. Ordinarily, this will be a separate document, but it is being included here as a separate section so that we can go through drafting of your article without worrying about edits in different files.
 
 \begin{figure*}[!h]
 \centering
