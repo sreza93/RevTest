@@ -15,7 +15,6 @@
 \usepackage{setspace}
 \usepackage{textcomp}
 \usepackage{gensymb}
-\usepackage{physics}
 \usepackage{array}
 \doublespacing
 \usepackage{subfigure}
@@ -30,12 +29,11 @@
 
 \usepackage[backend=biber, isbn=false, url=false, uniquename=init, terseinits=true, hyperref=true, doi=false, style=numeric, defernumbers=false, autocite=plain, sorting=none]{biblatex}
 \addbibresource{publishing.bib} % Replace this with the name of your .bib file.
-\usepackage[separate-uncertainty = true,multi-part-units=single,per-mode=symbol]{siunitx}
+\usepackage[separate-uncertainty=true,multi-part-units=single,per-mode=symbol,range-units=single,range-phrase=\text{-}]{siunitx}
 \DeclareSIUnit{\Molar}{M}
-\DeclareSIPrefix\micro{\text{\textmu}}{-3}
-\DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\gauss{G}
 \DeclareSIUnit\sq{\ensuremath{\Box}}
+\DeclareSIUnit\degc{\unit{\degreeCelsius}}
 
 \input{common/common} % To be commented out prior to submission.
 
@@ -80,16 +78,18 @@ This part is like a conference abstract, but shorter. No use of acronymns allowe
 
 \textcolor{purple}{\textsc{Checklist for you to follow before sending me the any draft (DO NOT DELETE until we are ready to submit this):
 \begin{enumerate}
+\item Are all physical quantities using siunitx like \qty{60}{\degreeCelsius}?
+\item Are all vendor sources mentioned in parenthesis at \textbf{FIRST} occurrence?
 \item Have you read the \textbf{entire} README file in the manuscript repo?
 \item Have you read the PDF corresponding to this template file in the manuscript repo?
 \item Are your figures legible when reduced to 85 mm width in two column format?
 \item Have you ensured that the enumerate environment, if used in your manuscript, does not contain any absolute references?
-\item Have you ensured that you are using exactly zero absolute references when referring to figures, tables, etc.? If you see usage like "Fig.~(1)", I will refuse to entertain the manuscript any further. Lose any brain dead Microsoft Word habits you might have.
-\item Have you ensured that you are not using any figure placement modifiers like "h", "t", etc. Please lose any brain dead Microsoft Word habits you might have. \textbf{\LaTeX\ } decide where each figure will go. No, let it decide and get your meddling fingers away from document beautification and focus on the \textbf{content}. 
+\item Have you ensured that you are using exactly zero absolute references when referring to figures, tables, etc.? If you see usage like "Fig.~(1)", I will refuse to entertain the manuscript any further. Please rapidly lose any brain dead Microsoft Word habits you might have.
+\item Have you ensured that you are not using any figure placement modifiers like "h", "t", "H", etc. Let \textbf{\LaTeX\ } decide where each figure will go. \footnote{No - I do mean: let it decide and get your meddling fingers away from document beautification and focus on the \textbf{content}. And no, I do NOT care if the figure ends up a universe away from where you think it should go. You are a scientist in training. The day you decide to become a desktop publishing expert looking for a job in a graphic design house, we can discuss your Microsoft Word addiction more seriously.}
 \item Does the shared Zotero collection under your shared collection contain all the citations in this manuscript?
 \item Has the shared Zotero collection been set to auto-export to the .bib file you added to the repo?
 \item Has this manuscript passed Grammarly with at least 99\% rating? The settings are described in the README in the manuscript repo.
-\item Have you increased the information density to the highest level possible using techniques I have taught you? This will involve a lot of cutting.
+\item Have you increased the information density to the highest level possible using techniques I have taught you? This will involve a lot of cutting. This involves many devices I have taught you in the scientific writing class. An easy first one is to stop usage of the kind: "Fig X shows Y.". This statement is patronizing to the reviewer (he/she is capable of seeing this if you have made decent figures), and it wastes space. Better method: "TEM data (Fig.~ 2) suggests ...".
 \item Have you run Grammarly after doing the cutting, ensuring 99\% rating again?
 \item Has every deserving co-author been listed, and their ORCID id provided in comments in the \LaTeX\ source?
 \item Have you acknowledged everyone non co-author that helped you, under the acknowledgment section?
@@ -153,12 +153,19 @@ This will be the \textbf{\Huge \textcolor{red}{first}} part of the paper you wri
 
 In this section, clearly describe how you did your work. Create subsections for materials analysis, device fabrication, device characterization etc. The description should tersely state (within parenthesis) what tools were used, along with OEM names. In case of software/computational work, you must clearly state the algorithm used, along with any software specialized tools. Do NOT mention LabVIEW, Matlab, Python, or any such general purpose tools - that looks amateurish. Any protocols used must be cited. Do not repeat yourself - if you have previously published with a given method, cite your previous work instead of writing everything again.
 
+Example text:
+
+Capacitance versus voltage characteristics was recorded using a low leakage probe station (EB mmW probe station, Everbeing) and semiconductor parameter analyzer (Keithley 4200-SCS), where both were connected using \SI{1.0}{meter} long triaxial cables (contributor to parasitic inductance and resistance). The force and sense terminals were connected in a dual connector configuration to enable sensitive measurement.
+
 \section{Results}
 \label{sec:results}
 
 This will be the \textbf{\Huge \textcolor{red}{second}} part of the paper you write.
 
-First insert figures (Fig.~(\ref{fig:cv})) and tables. Make sure that your figures use appropriate colors, fonts, etc. \cite{mcnames:2006}. Your sentences describing your data scientifically must appear in text, and must never use reference to figures or tables except inside parenthesis. Why? When we talk to each other, we do not speak out references, we speak out ideas. In that sense, cross references and citations are ``underspeak'' that are present in citations, or in parenthesis. This has the additional merit of saving you writing space. 
+First insert figures (Fig.~(\ref{fig:cv})) and tables. Make sure that your figures use appropriate colors, fonts, etc. \cite{mcnames:2006}. Your sentences describing your data scientifically must appear in text, and must never use reference to figures or tables except inside parenthesis. Why? When we talk to each other, we do not speak out references, we speak out ideas. In that sense, cross references and citations are ``underspeak'' that are present in citations, or in parenthesis. This has the additional merit of saving you writing space.
+
+The text must \textbf{not} contain any constructions of the sort: "X data is shown in Fig.~(Y)", or "Fig.~(Y) shows X data". Your reviewer is not blind. He/she can read. Patronizing the reviewer will not get you a positive decision.
+
 
 \begin{figure}
 \centering
@@ -170,11 +177,12 @@ First insert figures (Fig.~(\ref{fig:cv})) and tables. Make sure that your figur
 
 The label in Fig.~(\ref{fig:cv}) is an example of a cross-reference. You \textbf{never} use absolute references in a document (like \verb|Fig.~1|). The reason for this ought to be obvious - while you author a text, things can move around, and you do not want to keep track of what moves where. \LaTeX\ is supposed to take care of that - not you. You can make mistakes, and mistakes can be costly.
 
-An equation can be similarly labelled:
+An equation can be similarly labeled:
 
 \begin{align}
   E^{2} = p^{2} c^{2} + m_{0}^{2} c^{4} \label{eqn:relativistic4vector}
 \end{align}
+, where $c$ is the speed of light in vacuum, $c$=\qty{2.99792458e8}{\meter\per\second}. Note that physical quantities must always be expressed using siunitx, and these can be used in text as well as math mode.
 
 Not all equations need labels like Eq.~(\ref{eqn:relativistic4vector}) of course:
 
@@ -247,6 +255,30 @@ It should be quite obvious why we follow the naming convention the way we do. If
 \label{sec:conclusions}
 
 This will be the \textbf{\Huge \textcolor{red}{fifth}} part of the paper you write. This serves as a precis of your discussion, but in terms of more pithy statements, and you should highlight what the results mean for the field. This is also the place where you talk about future work.
+
+Overall sequence of operations in an edit cycle at our end:
+
+\begin{enumerate}
+\item You satisfy the checklist to the letter. Nothing is optional. If you have a doubt on how to satisfy a particular item, ask me.
+\item The above assumes that you have followed all the instructions above and in README.md in the manuscript repo. It is a long read. You will likely only need to do it once or twice in the time you are in my group.
+\item You push the first draft. I take a look at it once your number comes up in the queue. There may be other papers ahead of you in the queue.
+\item I leave comments for you to improve the manuscript. The first comments, if you have done a nice job, will be about the arguments you are making in the manuscript. If you not satisfied the checklist, I will be somewhat disgusted by the lack of application on display, and point out clerical issues in the checklist that were missed. What happens here is entirely in your control.
+\item You will work on the changes, and push this again, after going through the checklist. I will get to it when your manuscript comes to the top of my work queue. The number of times you get into the queue directly determines how long it takes for us to push the manuscript. Do a shoddy job, and we could be at it for a year. Do a good job, and it goes out in a week. It depends on your attention to detail, willingness to follow defined protocol, and level of seriousness and pride with which you approach your work.
+\item We will repeat the above a few times, depending on the number of clerical issues you have left unaddressed, length of the manuscript, and complexity of the arguments (which may need us to craft a very careful discussion section).
+\item Once I feel that the methods, results, discussion, conclusion and acknowledgment sections are written to my satisfaction, I will draft a cover letter. At this point, if there is any intellectual property that needs to be protected, we will carry out the following steps:
+
+  \begin{enumerate}
+  \item I will ask you to fill out the two forms on FITT website. These will be annexures A-1 and D: \href{https://fitt-iitd.in/wp-content/uploads/2020/05/Annex-A-1-Disclosure-form-for-registration-of-Provisional-Patent-at-IIT-Delhi.doc}{emergency provisional patent application}, and the \href{https://fitt-iitd.in/wp-content/uploads/2020/05/Annex-D-Disclosure-form-for-filing-a-Copyright-application-through-FITT.doc}{copyright application}. I have placed copies of these documents in the patent subfolder. Sorry - these are .odt files converted from .doc files copied from FITT website, so we will not be able to enjoy the advantages of fine-grained changes tracked by github. You will still do git add on the .odt files.
+  \item You will need to copy the introduction section from your draft, to the appropriate part of the forms above, and supply additional details\footnote{Please note that the language used in a patent application \textit{expands} potential application of your work to the maximum allowed by lawyers. The language used in the paper \textit{restricts} aspects of your work to the maximum we can support through citations to literature that fellow scientists will permit. The audiences for these documents are different: a) lawyers for the patents, b) scientists for the papers.}.
+  \item We will sign and submit the filing documents to FITT. They will go through initial due diligence, and get back to us. You will need to respond to their queries. Following this, the patent application will go to one of the lawyers retained by FITT, and discussions will take place on modifying the draft of the patent.
+  \end{enumerate}
+\item While the provisional patent application process is going on (this can take nearly a month), we will refine the Introduction section and write out a strong Conclusions section. Finally, we will write the abstract, and update the cover letter. The statement of contributions (CASRAI) and acknowledgments will need to be ready for review by co-authors at this point. The changes made will be committed and pushed.
+\item At this point, unless already decided, we will decide on the target journal. You will make needed changes to the format, and generate additional files needed by the target journal (details are available on their website). These may include: graphical abstract/Table of contents, highlights, any legal statement on copyright, etc. These changes will now be pushed.
+\item I will share the draft with our coauthors and collaborators, indicating the target journal, so that they can provide inputs. This may take a week. Once we receive feedback, we will update the draft, and push again.
+\item When the lawyers finally file the provisional patent, they will provide us with an application number. You will add a conflict of interest statement in the draft (see the section in this template) that mentions the application number. I will update the cover letter and add the same statement.
+\item We will submit the manuscript to the target journal, and await editorial decision.
+\item If the editorial decision is to reject the paper, we will reformat, inform co-authors, and resubmit it to an alternate journal. Otherwise, we will await the results of the first review cycle.
+\end{enumerate}
 
 \subsection*{Data availability}
 

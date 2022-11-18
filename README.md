@@ -19,11 +19,15 @@ Read the following in detail to get started.
 1. Initialize the repo and set the branch:
 
 		git init
-		git branch -M main
+		git branch -M master
 		
 1. Add DOCNAME.tex to the repo:
 
 		git add DOCNAME.tex
+
+1. Add .gitignore to the repository:
+
+		git add .gitignore
 		
 1. Do the initial commit:
 
@@ -35,7 +39,7 @@ Read the following in detail to get started.
 		
 1. Push to the main branch to remote:
 
-		git push origin -u main
+		git push origin -u master
 
 1. Go to GitHub web interface and confirm that indeed DOCNAME.tex has been pushed there.
 1. Come back to your machine, and start editing DOCNAME.tex. After this, you can use this as a normal repo using the workflow below.
