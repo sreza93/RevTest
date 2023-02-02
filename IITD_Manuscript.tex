@@ -6,7 +6,7 @@
 
 % You must run your manuscript through Grammarly prior to sending me the first draft. Not doing so will only lead to an avoidable waste of your time.
 
-\documentclass[12 pt]{article}
+\documentclass[12pt,twocolumn]{article}
 
 %%% INSERT JOURNAL'S PREAMBLE HERE WHEN YOU ARE ASKED TO REFORMAT FOR AN IDENTIFIED TARGET JOURNAL
 
@@ -141,19 +141,22 @@ Capacitance versus voltage characteristics was recorded using a low leakage prob
 
 There is an underlying philosophy to the way we do manuscripts in the lab - regardless of what it is, the name of the repo (already addressed in the README file), file, section, figure file, label to a figure, label to an equation, label to a table, etc. \textbf{\Huge \textcolor{blue}{must reflect the contents of whatever is being referenced or named}}. Hopefully, Table~(\ref{tbl:namingthings}) will serve as a useful rolodex - it is not complete, but it is strongly indicative.
 
-\begin{center}
-  \begin{longtable}{p{3cm}p{5cm}p{3.5cm}p{2.5cm}}
-    \caption{Naming things. Mandatory parts of the string in the name/label are in blue color. DOCNAME refers to the usage in the README file of this repo.} \label{tbl:namingthings}\\
+\scriptsize
+\begin{table}
+  \centering
+  \caption{Naming things. Mandatory parts of the string in the name/label are in blue color. DOCNAME refers to the usage in the README file of this repo.} \label{tbl:namingthings}
+  \begin{tabular}{p{1.5cm}p{2.5cm}p{3cm}p{2cm}}
     \hline
     \textbf{Entity}  & \textbf{Purpose of the entity} &  \textbf{Good usage} & \textbf{Examples of poor choices} \\\hline
-    Label to an equation & To label an equation so that it can be used in a cross-reference & \textcolor{blue}{eqn:}energyofparticle & Eq12, importantequation \\\hline
+    Label to an equation & To label an equation so that it can be used in a cross-reference & \textcolor{blue}{eqn:}energyparticle & Eq12, importantequation \\\hline
     Label to a figure & To label a figure so that it can be used in a cross-reference & \textcolor{blue}{fig:}JVdata & Fig1 \\\hline
     Label to a table & To label a table so that it can be used in a cross-reference & \textcolor{blue}{tbl:}ratio & Table1, reallyimportantsummary \\\hline
     Label to a section & To label a section in the document so that it can be used in a cross-reference & \textcolor{blue}{sec:}discussion & Sec1 \\\hline
     Name of a figure file & To name a figure file that can be subsequently called in includegraphics markup & JVdata.eps & Fig1b.eps, firstfigure.eps\\\hline
     Name of the bibliography file & To name the .bib file that you will be using in this document & \textcolor{blue}{DOCNAME.bib} & references.bib \\\hline
-  \end{longtable}
-\end{center}
+  \end{tabular}
+\end{table}
+\normalsize
 
 Needless to add, you need to pick labels that reflect the contents of the object being referenced.
 
@@ -172,11 +175,22 @@ The text must \textbf{not} contain any constructions of the sort: "X data is sho
 
 
 \begin{figure}
-\centering
-\subfigure[Measured capacitance as a function of area.]{\label{fig:ca}\includegraphics[width=88mm,keepaspectratio]{example-image-a}}
-\subfigure[C(f) for different biases.]{\label{fig:cfv}\includegraphics[width=88mm,keepaspectratio]{example-image-b}}
-\caption{(a) Use clear images, preferably in .eps form for anything other than scan data, and (b) .png form for scan data. The width of the figure is chosen to be 88mm since that is the typical width of a journal column in two-column format. Your figures must be clear to read easily at this size. If your figure is too wide to fit in this width, you can use the figure* environment, but that is done only in very rare cases where the figure is really complex.}
-\label{fig:cv}
+  \centering
+  \begin{subfigure}{80mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Measured capacitance as a function of area.}
+    \label{fig:ca}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{80mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{C(f) for different biases.}
+    \label{fig:cfv}
+  \end{subfigure}
+  \caption{\subref{fig:ca} Use clear images, preferably in .eps form for anything other than scan data, and \subref{fig:cfv} .png form for scan data. The width of the figure is chosen to be 80mm since that is the typical width of a journal column in two-column format. Your figures must be clear to read easily at this size. If your figure is too wide to fit in this width, you can use the figure* environment, but that is done only in very rare cases where the figure is really complex. In case, we switch to using a large figure panel that cuts across two columns, each subfigure will need to be reduced to a width of around 40mm (for 2 in a row) or 27 cm (for 3 in a row), and so on.}
+  \label{fig:cv}
 \end{figure}
 
 The label in Fig.~(\ref{fig:cv}) is an example of a cross-reference. You \textbf{never} use absolute references in a document (like \verb|Fig.~1|). The reason for this ought to be obvious - while you author a text, things can move around, and you do not want to keep track of what moves where. \LaTeX\ is supposed to take care of that - not you. You can make mistakes, and mistakes can be costly.
@@ -200,7 +214,7 @@ In labeling (and referencing equations), be conservative. Label only those speci
 Tables can be similarly cross-referenced as shown in Table~\ref{tbl:ratio}.
 
 \begin{table}
-  \caption{An example table}
+  \caption{An example table. The width of this table is controllable using p parameters instead of merely centering everything. For large tables, we may have to use both columns.}
   \label{tbl:ratio}
   \begin{center}
     \begin{tabular}{cccccc}
@@ -234,6 +248,30 @@ This section is sometimes combined with Sec.~(\ref{sec:results}). Usually, it is
 Your target impact factor will be largely determined the quality of your discussion section.
 
 This is also the place where you should criticize certain shortcomings of your own work (typically towards the end), and indicate future work you may be doing to clear up open questions. It is important to put that here to disarm overly critical reviewers.
+
+This part demonstrates how to add things here during revisions and how to correctly refer to them in the reviewer response document:
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{42mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{High-resolution TEM data.}
+    \label{fig:hrtem}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{42mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Percentage coverage (from SEM data).}
+    \label{fig:surfacecoverage}
+  \end{subfigure}
+  \caption{\subref{fig:hrtem} This could be a response to revisions requested by a reviewer. \subref{fig:surfacecoverage}  You can use the labels used here in the response document since we have used package xr there, and defined this manuscript file as the external document there.}
+  \label{fig:revisedtem}
+\end{figure}
+
+High-resolution TEM data and surface coverage extracted from SEM data (Fig.~(\ref{fig:revisedtem})) which was analyzed using SciPy\cite{virtanen:2020}, which is a Python\cite{perez:2011,stancin:2019} library used for such tasks. indicate that surface roughness cannot be a candidate explanation for the observed high leakage current in the device. Instead, charge storage in the disordered film may be released over time. This aspect will be studied in a forthcoming paper\label{page:rev1q2}\linelabel{line:rev1q2}.
+
 
 \section{Conclusions}
 \label{sec:conclusions}
