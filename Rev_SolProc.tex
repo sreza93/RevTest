@@ -1,0 +1,391 @@
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex
+
+% I am sorry to have to point this out, but you cannot make any changes to the PREAMBLE of this document. It is intentionally designed to keep things generic enough so that this manuscript can be subsequently reformatted to specific journal templates/class files with minimal fuss. For initial submissions, most journals will need just the PDF file (this format) for the first round of review. If there is a package you absolutely need to add, you can, but only after ensuring that you cannot live without it and discussing it with me. Places in the preamble where you can make changes are explicitly marked with comments.
+
+% You must run your manuscript through Grammarly prior to sending me the first draft. Not doing so will only lead to an avoidable waste of your time.
+
+\documentclass[12pt,twocolumn]{article}
+
+%%% INSERT JOURNAL'S PREAMBLE HERE WHEN YOU ARE ASKED TO REFORMAT FOR AN IDENTIFIED TARGET JOURNAL
+
+%%% INSERT ENDS
+
+% PREAMBLE starts here. You cannot make any changes until the PREAMBLE ends. It will be marked where it ends. This must be commented out (and NOT deleted) when you reformat the manuscript for a target journal.
+
+\input{common/preamble} % To be commented out prior to reformatting for a target journal.
+\input{common/common} % To be commented out prior to submission.
+\addbibresource{publishing.bib} % Replace this with the name of your .bib file. This line will need to be commented out prior to reformatting for a journal, and replaced with a corresponding BibTeX directive (after re-exporting the .bib file with the changed format) since most journals still use BibTeX.
+
+% \renewcommand{\finentrypunct}{
+%   \addperiod\space
+%   (Cited \arabic{citecounter}~time\ifnumequal{\value{citecounter}}{1}{}{s})%
+%  }
+
+\graphicspath{{./figures/}}
+
+% PREAMBLE ends here. You can make changes starting here, but changes are limited in scope.
+
+
+% In the title, author, and affil directives before, enter your details. Of course, the number of authors and affils can vary - comment out whatever you are not using/add more if needed. Make sure you enter the ORCID ids for all authors in the comment after each listing below, after ':'.
+% WARNING: Do NOT delete this section even after you format it for a specific journal. Merely comment it out.
+\title{Preparing a manuscript for a peer-reviewed journal the FMDL way}
+\author[1]{\small First Author} % ORCID ID of the first author:
+\author[2]{\small Second Author}  % ORCID ID of the second author:
+\author[1]{\small Third Author}  % ORCID ID of the third author:
+\author[1]{\small Postdoc Scholar}  % ORCID ID of the postdoc involved:
+\author[2]{\small Collaborating PI}  % ORCID ID of the collaborating PI:
+\author[1]{\small Madhusudan Singh\thanks{msingh@ee.iitd.ac.in}}  % ORCID ID: 0000-0001-5430-1405
+\affil[1]{\footnotesize Functional Materials \& Devices Laboratory, Department of Electrical Engineering, IIT Delhi, New Delhi, NCT, India, 110 016.} % Our lab - will remain untouched.
+\affil[2]{\footnotesize Department of Chemistry, IIT Delhi, New Delhi, NCT, India, 110 016.} % Change/comment out as needed
+
+% Please enter information on potential reviewers below (at least 5, none from any of the co-author's affiliations, and none from IIT Delhi whatsoever.):
+% Reviewer 1: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 2: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 3: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 4: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+% Reviewer 5: Name. Email address. Department. School/Company. Webpage URL. Reason for suggesting this reviewer.
+
+\date{} % Comment out prior to reformatting
+
+
+%%% INSERT JOURNAL SPECIFIC NON-PREAMBLE ITEMS LIKE FRONT PAGE STUFF, auth/affil blocks etc.
+
+%%% INSERT ENDS
+
+\begin{document}
+\maketitle % You may have to comment this out when reformatting, unless the journal template also contains a reformatting command.
+
+\begin{abstract}
+This part is like a conference abstract, but shorter. No use of acronymns allowed. Briefly (one sentence), motivate the manuscript. Then say what you did. Finally, summarize the main result, including salient numbers from data. This will be the last part of the paper you write just before final grammar check. This will be the \textbf{\Huge \textcolor{red}{seventh}} part of the paper you write.
+\end{abstract}
+
+\linenumbers % You may have to comment this out when reformatting, unless the journal requires that line numbers be placed in the text
+
+
+\section{Prewriting}
+
+Before you do anything in this paper, you need to complete pre-writing:
+
+\begin{enumerate}
+\item Decide what is the story. Decide what are the figures.
+\item What are sections needed? What are the key citations?
+\item \textbf{You have not written a word yet at this stage. Just a sketch of the article on a piece of paper.}
+\item Figures. Use .eps for vector graphics. Use .tiff for scan data. For initial submission, please ensure that your figures do not exceed 1 MB in size or so. Scale down. You can use docupub to compress pdfs. High resolution images will be needed after acceptance of the manuscript.
+\item Shared Zotero collection. Add all the key citations. Generate a .bib file.
+\item Go for a walk. Think about your competition.
+\item Prepare a competition table. List relevant parameters. Add needed references to Zotero collection.
+\item Scribble out a flowchart for the argument flow.
+\item Decide what are competing/contradictory references that a reviewer will ask about. Add them to Zotero.
+\item Go for another walk. Decide if you can address any of the weaknesses in the paper now and how much time it will take. If you can do these quickly, go back to the step on figures (add/modify).
+\end{enumerate}
+
+The moment you complete the pre-writing process, \textbf{clear a full day} from all distractions (social media, email, phone, etc), and write the entire paper in 6 hours\footnote{If you have more than one actively writing co-author, you both need to first share the Zotero collection. Then, depending on your preference, you can open a document on Google Docs, and set up a Zoom call while you co-write parts of the paper together in full markup simultaneously. Alternatively, you can push your part to GitHub and inform the other student/postdoc to do a git pull and proceed. If we are collaborating with a non-\LaTeX\ using group, the Google Doc method might work better. The backup of using pandoc to convert back and forth always exists but that is more error prone.}. This will take 2.5-3 hours if you are putting together a Letters type manuscript. Your actual numbers in practice will be about 15\% higher than these estimates for your first paper, with the measure improving as you gain more experience.
+
+\subsection{Sequence of writing the paper}
+
+The sequence of writing the sections (along with expected time taken in each part for a full research article):
+
+\begin{enumerate}
+\item (24 hours) Pre-writing (see above).
+\item (30 minutes) Methods
+\item (50 minutes) Results
+\item (20 minutes) Acknowledgments, which includes the statement of contributions, and conflicts of interest (such patent applications, etc.).
+\item (2.5 hours) Discussion.
+\item (20 minutes) Conclusions.
+\item (1 hour) Introduction (this section, see below).
+\item (30 minutes) Abstract.
+\end{enumerate}
+
+The sum of times above, after pre-writing, is 6 hours. If you are spending more time than is indicated above, you are not working with focus, or did not do a good job of pre-writing.
+
+\section{Introduction}
+\label{sec:introduction}
+
+Read through the entire PDF. This will tell you in which order to write the paper with cardinal order defined in bold, large red letters. You also need to pay attention to the comments in the .tex file associated with this PDF. The pre-push checklist is listed in the appendix.
+
+Introduction will be the \textbf{\Huge \textcolor{red}{sixth}} part of the paper you write. First step in the paper is to proceed to the results section. Once you come back to this section do the following:
+
+\begin{itemize}
+\item Paragraph one should prove the importance of the topic of your study with citations to recent (last 3-5 years) literature, especially review articles.
+\item Pararaph two should clearly establish the need statement for the study by clearly defining the open problem that needs addressing.
+\item Paragraph three should very briefly tell the audience what you have done (abstract style) and which approach you have followed (if that is useful to include).
+\end{itemize}
+
+Once you have done the above, and also written up an abstract, it is now time to do the following:
+
+\begin{enumerate}
+\item Cutting: Prune your sentences to increase information density. Grammarly will also help, but the first part must be done by you.
+\item Check for English\cite{burchfield:1998,strunk:2000}, and run it thoroughly through Grammarly.
+\item Create a github repo. Under settings of the new repo, under notifications, add your email address, and mine. What this will do is that as soon as some changes are pushed, everyone gets notified. GitHub currently allows only two email addresses.
+\item Commit the first verson and push.
+\item We go back and forth. The more carefully you have written the first draft, the faster this process should go.
+\item Format it for the target journal identified by both of us. As soon as the decision regarding a journal has been made, go to that journal's website, and view the guide for authors on their webpage. There is usually a submission checklist document located under guide for authors which tells you what kind of documents are needed. Please create them all.
+\item Commit and push. I will view this draft and do some final checks, and prepare the cover letter.
+\item Once I push the updated version with the cover letter, and if no major changes are needed, send the draft out to all co-authors for comments. When a collaboration is involved, I will do this myself.
+\item Run a Turnitin check - remember - no repositories.
+\end{enumerate}
+
+
+\section{Methods}
+This will be the \textbf{\Huge \textcolor{red}{first}} part\footnote{This presumes that you have gone through the pre-writing phase.} of the paper you write.
+
+In this section, clearly describe how you did your work. Create subsections for materials analysis, device fabrication, device characterization etc. The description should tersely state (within parenthesis) what tools were used, along with OEM names. In case of software/computational work, you must clearly state the algorithm used, along with any software specialized tools. Do NOT mention LabVIEW, Matlab, Python, or any such general purpose tools - that looks amateurish. Any protocols used must be cited. Do not repeat yourself - if you have previously published with a given method, cite your previous work instead of writing everything again.
+
+Example text:
+
+Capacitance versus voltage characteristics was recorded using a low leakage probe station (EB mmW probe station, Everbeing) and semiconductor parameter analyzer (Keithley 4200-SCS), where both were connected using \SI{1.0}{meter} long triaxial cables (contributor to parasitic inductance and resistance). The force and sense terminals were connected in a dual connector configuration to enable sensitive measurement.
+
+\subsection{Naming things}
+
+There is an underlying philosophy to the way we do manuscripts in the lab - regardless of what it is, the name of the repo (already addressed in the README file), file, section, figure file, label to a figure, label to an equation, label to a table, etc. \textbf{\Huge \textcolor{blue}{must reflect the contents of whatever is being referenced or named}}. Hopefully, Table~(\ref{tbl:namingthings}) will serve as a useful rolodex - it is not complete, but it is strongly indicative.
+
+\scriptsize
+\begin{table}
+  \centering
+  \caption{Naming things. Mandatory parts of the string in the name/label are in blue color. DOCNAME refers to the usage in the README file of this repo.} \label{tbl:namingthings}
+  \begin{tabular}{p{1.5cm}p{2.5cm}p{3cm}p{2cm}}
+    \hline
+    \textbf{Entity}  & \textbf{Purpose of the entity} &  \textbf{Good usage} & \textbf{Examples of poor choices} \\\hline
+    Label to an equation & To label an equation so that it can be used in a cross-reference & \textcolor{blue}{eqn:}energyparticle & Eq12, importantequation \\\hline
+    Label to a figure & To label a figure so that it can be used in a cross-reference & \textcolor{blue}{fig:}JVdata & Fig1 \\\hline
+    Label to a table & To label a table so that it can be used in a cross-reference & \textcolor{blue}{tbl:}ratio & Table1, reallyimportantsummary \\\hline
+    Label to a section & To label a section in the document so that it can be used in a cross-reference & \textcolor{blue}{sec:}discussion & Sec1 \\\hline
+    Name of a figure file & To name a figure file that can be subsequently called in includegraphics markup & JVdata.eps & Fig1b.eps, firstfigure.eps\\\hline
+    Name of the bibliography file & To name the .bib file that you will be using in this document & \textcolor{blue}{DOCNAME.bib} & references.bib \\\hline
+  \end{tabular}
+\end{table}
+\normalsize
+
+Needless to add, you need to pick labels that reflect the contents of the object being referenced.
+
+Notice some ground rules for labeling: sec for sections, fig for figures, tbl for tables. This convention, that I follow in my documents, helps distinguish between the objects that are being referenced. It is for your own benefit of course.
+
+It should be quite obvious why we follow the naming convention the way we do. If you choose to violate instructions provided in this document and the overall repo, please do us both the favor of not publishing. I do not care how good your science is, but if you cannot be bothered to use rational, common sense-based, \textbf{consistent and systematic} methods to communicate your science, you: a) are not a good scientist, and b) your communicated science will not make an impact anywhere. Good scientists are systematic, cautious, thorough, sceptical, thoughtful, and organized in a manner that makes machines look human by comparison. Yes, OCD is an occupational hazard in our business. Careful people show care and forethought in everything they can.
+
+\section{Results}
+\label{sec:results}
+
+This will be the \textbf{\Huge \textcolor{red}{second}} part of the paper you write.
+
+First insert figures (Fig.~(\ref{fig:cv})) and tables. Make sure that your figures use appropriate colors, fonts, etc. \cite{mcnames:2006}. Your sentences describing your data scientifically must appear in text, and must never use reference to figures or tables except inside parenthesis. Why? When we talk to each other, we do not speak out references, we speak out ideas. In that sense, cross references and citations are ``underspeak'' that are present in citations, or in parenthesis. This has the additional merit of saving you writing space.
+
+The text must \textbf{not} contain any constructions of the sort: "X data is shown in Fig.~(Y)", or "Fig.~(Y) shows X data". Your reviewer is not blind. He/she can read. Patronizing the reviewer will not get you a positive decision.
+
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{80mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Measured capacitance as a function of area.}
+    \label{fig:ca}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{80mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{C(f) for different biases.}
+    \label{fig:cfv}
+  \end{subfigure}
+  \caption{\subref{fig:ca} Use clear images, preferably in .eps form for anything other than scan data, and \subref{fig:cfv} .png form for scan data. The width of the figure is chosen to be 80mm since that is the typical width of a journal column in two-column format. Your figures must be clear to read easily at this size. If your figure is too wide to fit in this width, you can use the figure* environment, but that is done only in very rare cases where the figure is really complex. In case, we switch to using a large figure panel that cuts across two columns, each subfigure will need to be reduced to a width of around 40mm (for 2 in a row) or 27 cm (for 3 in a row), and so on.}
+  \label{fig:cv}
+\end{figure}
+
+The label in Fig.~(\ref{fig:cv}) is an example of a cross-reference. You \textbf{never} use absolute references in a document (like \verb|Fig.~1|). The reason for this ought to be obvious - while you author a text, things can move around, and you do not want to keep track of what moves where. \LaTeX\ is supposed to take care of that - not you. You can make mistakes, and mistakes can be costly.
+
+An equation can be similarly labeled:
+
+\begin{align}
+  E^{2} = p^{2} c^{2} + m_{0}^{2} c^{4} \label{eqn:relativistic4vector}
+\end{align}
+, where $c$ is the speed of light in vacuum, $c$=\qty{2.99792458e8}{\meter\per\second}. Note that physical quantities must always be expressed using siunitx, and these can be used in text as well as math mode.
+
+Not all equations need labels like Eq.~(\ref{eqn:relativistic4vector}) of course:
+
+\begin{align}
+  E & = h\nu \nonumber \\
+  & \equiv \frac{h c}{\lambda} \label{eqn:plancksrelationship}
+\end{align}
+
+In labeling (and referencing equations), be conservative. Label only those specific (and few) equations that you are actually going to use. Remember - any text can be made to look more inaccessible by involving more math. You should not show all steps in a paper, just the important ones that help you make your point. Needless to add, all your analytical calculations should be cross-checked with Maxima or Mathematica before it gets on your manuscript draft. No, you need to do that now. A neat trick in Mathematica is the use of \verb|TeXForm[]| function to output \LaTeX\ formatted code for the math. This may save you a lot of time, and transcription errors.
+
+Tables can be similarly cross-referenced as shown in Table~\ref{tbl:ratio}.
+
+\begin{table}
+  \caption{An example table. The width of this table is controllable using p parameters instead of merely centering everything. For large tables, we may have to use both columns.}
+  \label{tbl:ratio}
+  \begin{center}
+    \begin{tabular}{cccccc}
+      x  & Thickness & & \multicolumn{3}{c}{Composition: EDX and (XPS)} \\
+         & (nm) & & K/A & Na/A & Nb/A \\
+      \hline \\
+      0.3 & 62 $\pm$ 4 & & 0.365 $\pm 2\%$ & 0.634 $\pm 2\%$ & 1.036 $\pm 2\%$ \\
+         & & & (0.3375) & (0.6624) & (1.028) \\
+      \hline \\
+      0.5 & 70 $\pm$ 2 & & 0.510 $\pm 2\%$ & 0.489 $\pm 2\%$ & 0.937 $\pm 2\%$ \\
+         & & & (0.5091) & (0.4910) & (1.037) \\
+      \hline \\
+      0.7 & 68 $\pm$ 2 & & 0.718 $\pm 2\%$ & 0.281 $\pm 2\%$ & 0.928 $\pm 2\%$ \\
+         & & & (0.7682) & (0.2317) & (1.153) \\
+      \hline \\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Do \textbf{NOT} patronize your reviewer by merely \textit{reading} the plots to them. That is \textbf{NOT} results or discussion.
+
+\section{Discussion}
+\label{sec:discussion}
+
+This will be the \textbf{\Huge \textcolor{red}{fourth}} part of the paper you write. I have intentionally split it up because even in cases when this is not a separate section in your manuscript, you should write it after a break (writing acknowledgments) - there is a difference between a) what the data are, and b) what your data mean, in light of literature.
+
+This is where analysis of your data in terms of a physical model, interpretation for various quantities in the model, or existing literature, etc. happens. Very often, the title of the article can change completely after a good discussion section. You can probably write a good discussion section provided you have a good idea of what the story of the paper is (from pre-writing). Conversely, a compelling analysis and discussion can better cement your ideas about what the story ought to be. The effect of this section permeates the entire paper. You will be writing the introduction section after writing the discussion section, and the conclusions. What kind of literature you cite will depend on what your story is turning out to be after analysis.
+
+This section is sometimes combined with Sec.~(\ref{sec:results}). Usually, it is important to have it separate, especially when a fair bit of data analysis and interpretation is involved, and you need to place the discussion of the results in context of the existing literature. Whether to split or not is a personal choice, but is largely driven by how much do your results need to be compared and/or contrasted with literature. Very often, a comparison table between this work, and other studies will be placed here.
+
+Your target impact factor will be largely determined the quality of your discussion section.
+
+This is also the place where you should criticize certain shortcomings of your own work (typically towards the end), and indicate future work you may be doing to clear up open questions. It is important to put that here to disarm overly critical reviewers.
+
+This part demonstrates how to add things here during revisions and how to correctly refer to them in the reviewer response document:
+
+\begin{figure}
+  \centering
+  \begin{subfigure}{42mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{High-resolution TEM data.}
+    \label{fig:hrtem}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{42mm}
+    \centering
+    \includegraphics[width=\textwidth]{example-image-b}
+    \caption{Percentage coverage (from SEM data).}
+    \label{fig:surfacecoverage}
+  \end{subfigure}
+  \caption{\subref{fig:hrtem} This could be a response to revisions requested by a reviewer. \subref{fig:surfacecoverage}  You can use the labels used here in the response document since we have used package xr there, and defined this manuscript file as the external document there.}
+  \label{fig:revisedtem}
+\end{figure}
+
+High-resolution TEM data and surface coverage extracted from SEM data (Fig.~(\ref{fig:revisedtem})) which was analyzed using SciPy\cite{virtanen:2020}, which is a Python\cite{perez:2011,stancin:2019} library used for such tasks. indicate that surface roughness cannot be a candidate explanation for the observed high leakage current in the device. Instead, charge storage in the disordered film may be released over time. This aspect will be studied in a forthcoming paper\label{page:rev1q2}\linelabel{line:rev1q2}.
+
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+This will be the \textbf{\Huge \textcolor{red}{fifth}} part of the paper you write. This serves as a precis of your discussion, but in terms of more pithy statements, and you should highlight what the results mean for the field. This is also the place where you talk about future work.
+
+Overall sequence of operations in an edit cycle at our end:
+
+\begin{enumerate}
+\item You satisfy the checklist to the letter. Nothing is optional. If you have a doubt on how to satisfy a particular item, ask me.
+\item The above assumes that you have followed all the instructions above and in README.md in the manuscript repo. It is a long read. You will likely only need to do it once or twice in the time you are in my group.
+\item You push the first draft. I take a look at it once your number comes up in the queue. There may be other papers ahead of you in the queue.
+\item I leave comments for you to improve the manuscript. The first comments, if you have done a nice job, will be about the arguments you are making in the manuscript. If you not satisfied the checklist, I will be somewhat disgusted by the lack of application on display, and point out clerical issues in the checklist that were missed. What happens here is entirely in your control.
+\item You will work on the changes, and push this again, after going through the checklist. I will get to it when your manuscript comes to the top of my work queue. The number of times you get into the queue directly determines how long it takes for us to push the manuscript. Do a shoddy job, and we could be at it for a year. Do a good job, and it goes out in a week. It depends on your attention to detail, willingness to follow defined protocol, and level of seriousness and pride with which you approach your work.
+\item We will repeat the above a few times, depending on the number of clerical issues you have left unaddressed, length of the manuscript, and complexity of the arguments (which may need us to craft a very careful discussion section).
+\item Once I feel that the methods, results, discussion, conclusion and acknowledgment sections are written to my satisfaction, I will draft a cover letter. At this point, if there is any intellectual property that needs to be protected, we will carry out the following steps:
+
+  \begin{enumerate}
+  \item I will ask you to fill out the two forms on FITT website. These will be annexures A-1 and D: \href{https://fitt-iitd.in/wp-content/uploads/2020/05/Annex-A-1-Disclosure-form-for-registration-of-Provisional-Patent-at-IIT-Delhi.doc}{emergency provisional patent application}, and the \href{https://fitt-iitd.in/wp-content/uploads/2020/05/Annex-D-Disclosure-form-for-filing-a-Copyright-application-through-FITT.doc}{copyright application}. I have placed copies of these documents in the patent subfolder. Sorry - these are .odt files converted from .doc files copied from FITT website, so we will not be able to enjoy the advantages of fine-grained changes tracked by github. You will still do git add on the .odt files.
+  \item You will need to copy the introduction section from your draft, to the appropriate part of the forms above, and supply additional details\footnote{Please note that the language used in a patent application \textit{expands} potential application of your work to the maximum allowed by lawyers. The language used in the paper \textit{restricts} aspects of your work to the maximum we can support through citations to literature that fellow scientists will permit. The audiences for these documents are different: a) lawyers for the patents, b) scientists for the papers.}.
+  \item We will sign and submit the filing documents to FITT. They will go through initial due diligence, and get back to us. You will need to respond to their queries. Following this, the patent application will go to one of the lawyers retained by FITT, and discussions will take place on modifying the draft of the patent.
+  \end{enumerate}
+\item While the provisional patent application process is going on (this can take nearly a month), we will refine the Introduction section and write out a strong Conclusions section. Finally, we will write the abstract, and update the cover letter. The statement of contributions (CASRAI) and acknowledgments will need to be ready for review by co-authors at this point. The changes made will be committed and pushed.
+\item At this point, unless already decided, we will decide on the target journal. You will make needed changes to the format\footnote{However, you will not delete ANYTHING from the preamble. Comment out this template's preamble, auth/affil block, etc. and insert the journal's preamble in the section specifically marked in comments.}, and generate additional files needed by the target journal (details are available on their website). These may include: graphical abstract/Table of contents, highlights, any legal statement on copyright, etc. These changes will now be pushed.
+\item I will share the draft with our coauthors and collaborators, indicating the target journal, so that they can provide inputs. This may take a week. Once we receive feedback, we will update the draft, and push again.
+\item When the lawyers finally file the provisional patent, they will provide us with an application number. You will add a conflict of interest statement in the draft (see the section in this template) that mentions the application number. I will update the cover letter and add the same statement.
+\item We will submit the manuscript to the target journal, and await editorial decision.
+\item If the editorial decision is to reject the paper, we will reformat, inform co-authors, and resubmit it to an alternate journal. Otherwise, we will await the results of the first review cycle.
+\end{enumerate}
+
+\subsection*{Data availability}
+
+Authors will make data available upon reasonable request.
+
+\section*{Acknowledgments}
+
+This will be the \textbf{\Huge \textcolor{red}{third}} part of the paper you write. Immediately after you write about results, it should be easy to remember who helped you get those results. This is also the right time to add the ORCID ids of all authors in the commented portion in the preamble.
+
+FA and TA (PhD fellowships) and PS (postdoc fellowship) acknowledge support from Ministry of Human Resource \& Development (MHRD). SA acknowledges support from University Grants Commission. CP acknowledges partial support from grant XYZ from Department of Science \& Technology. PS and MS acknowledges support from grant ABC from Department of Science \& Technology. All authors acknowledge facility access to Central Research Facility (CRF) and Nanoscale Research Facility (NRF, NNetra program) at IIT Delhi. Authors acknowledge technical assistance from Mr. Did Occasional Measurements/Process Runs of CRF.
+
+\subsection*{Statement of contributions}
+
+FA fabricated the devices. FA and TA characterized devices. SA and PS synthesized active semiconductor materials. SA, TA, and PS carried out XPS measurements. FA, SA, TA, and PS carried out data reduction. FA, SA, PS, CP and MS carried out technical discussions. FA, SA, CP and MS wrote the manuscript.
+
+In terms of \href{https://casrai.org/credit/}{CRediT (Contributor Roles Taxonomy)}: a) Conceptualization: FA, CP and MS, b) Data curation: FA, SA, TA, and PS, c) Formal analysis: FA and PS, d) Funding acquisition: CP and MS, e) Investigation: FA, SA, TA, and PS, f) Methodology: PS, CP and MS, g) Project administration: PS, CP and MS, h) Resources: CP and MS, i) Software: FA, SA and PS, j) Supervision: PS, CP and MS, k) Validation: FA and TA, l) Visualization: FA, SA, TA, and PS, m) Writing - original draft: FA and SA, n) Writing - review \& editing: FA, CP and MS.
+
+\subsection*{Conflicts of Interest}
+Authors FA, TA, PS and MS declare competing interest in the form of an Indian patent application (201330070300).
+
+% \subsection*{Author Bios}
+
+% This is included for completeness. Not all journals need this section. You can leave it commented out until the journal is finalized.
+
+% % All author photos must be named as XYZbio.png where 'XYZ' are the disambiguated (see below) initials for each author. These must be saved where the rest of your graphics go - the figures subdirectory.
+% % If you have never written a bio, see mine (below) for an idea of what to include.
+
+% \begin{description}
+%  \item {\includegraphics[width=1in,height=1.25in,keepaspectratio]{example-image-a}} \textbf{FA} is a new author when it comes to writing papers. He/she is slowly learning and will get much better with time. % FAbio.png goes here. You should replace the string 'FA' with your own initials. Keep the rest of the filename the same. If there is more than one author with the same initials, use 'FA1', 'FA2' etc.
+%  \item {\includegraphics[width=1in,height=1.25in,keepaspectratio]{example-image-a}} \textbf{SA} is also a new author when it comes to writing papers. He/she is slowly learning and will get much better with time. % SAbio.png goes here.
+%  \item {\includegraphics[width=1in,height=1.25in,keepaspectratio]{example-image-a}} \textbf{TA} is a somewhat seasoned author when it comes to writing papers. He/she is much than when he/she started. % TAbio.png goes here.
+%  \item {\includegraphics[width=1in,height=1.25in,keepaspectratio]{example-image-a}} \textbf{PS} is quite experienced in writing papers. He/she is into teaching younger researchers in how to write a paper. % PSbio.png goes here.
+%  \item {\includegraphics[width=1in,height=1.25in,keepaspectratio]{example-image-a}} \textbf{CP} is our honored colleague, without whose help this work would have never seen the light of the day. He/she is quite busy advising his/her own research group. % CPbio.png goes here.
+%  \item {\includegraphics[width=1in,height=1.25in,keepaspectratio]{example-image-a}} \textbf{Madhusudan Singh} graduated at the top of his 5-year Integrated M. Sc. Physics class at IIT Kanpur in 1999 with minors in electrical engineering, and computer science. He earned his M. S. degrees in EE and in Mathematics in 2003 and Ph. D. (EE) in 2005 in transport in III-V nitride heterojunctions. After postdoctoral work at MIT in organic optoelectronics, he joined Arizona State University, where he developed printing technologies as a research scientist at the Flexible Display Center. After work on chalcogenide-based flexible electronics at the University of Texas at Dallas, and as an editor at Wiley, he joined the faculty of the Department of Electrical Engineering at IIT Delhi in 2013. His academic service has involved serving as a panel / proposal /application reviewer for the US National Science Foundation (NSF) and the US Department of Energy (DoE), Indian Science \& Engineering Research Board (SERB), Indo-US Science and Technology Forum (IUSSTF), as associate editor of Advanced Functional Materials, in addition to reviewing for several journals, and as editor for special issues for IEEE and IoP. His research interests lie in solution-processed and printed device fabrication methods, flexible electronics, materials and surface chemistry, low cost photovoltaics, solid-state lighting sources, and sensors and detectors. % No change.
+% \end{description}
+
+
+\printbibliography
+
+\clearpage
+
+\appendix
+
+\section{Pre-push checklist}
+
+%%%%% DO-NOT-DELETE BLOCK STARTS %%%%
+\textcolor{purple}{%
+  \textsf{\small Checklist for you to follow before sending me the any draft (DO NOT DELETE until we are ready to submit this):
+    \begin{enumerate}
+    \item Please familiarize yourself with the accepted method of reporting measured data, and analytical/simulated quantities (\href{https://www.nist.gov/pml/special-publication-811/special-publication-811-extended-contents}{The NIST Guide for the user of the International System of Units: Special Publication 811}).
+    \item Are you following the rules governing reporting of data in terms of significant figures (see: \href{https://ccnmtl.columbia.edu/projects/mmt/frontiers/web/chapter_5/6665.html}{Significant Figures})? Chopping off or adding numbers to reported numbers for reasons of ``beautification'' are tantamount to malpractice, and almost as grievous as cooking up data.
+    \item Are all physical quantities using siunitx like \qty{60}{\degreeCelsius}?
+    \item Have you removed any patronizing comments to the reviewer by \textit{reading} your plots to him anywhere in the paper? You can cross-reference a plot, or specifically mention a number from such a plot, \textbf{if and only if} it allows you to make a scientific point in the discussion section. General comments like "test device performed measurably better than the control" can be mentioned in the results section, but only once, and that also in the last paragraph of your results section.
+    \item Are all vendor sources mentioned in parenthesis at \textbf{FIRST} occurrence?
+    \item Have you read the \textbf{entire} \href{https://github.com/FMDLab/manuscript\#readme}{README file} in the manuscript repo?
+    \item Have you read the PDF corresponding to this template file in the manuscript repo?
+    \item Are your figures legible when reduced to 85 mm width in two column format?
+    \item Have you ensured that the enumerate environment, if used in your manuscript, does not contain any absolute references?
+    \item Have you ensured that you are using exactly zero absolute references when referring to figures, tables, etc.? If you see usage like "Fig.~(1)", I will refuse to entertain the manuscript any further. Please rapidly lose any brain dead Microsoft Word habits you might have.
+    \item Have you ensured that you are not using any figure placement modifiers like "h", "t", "H", etc. Let \textbf{\LaTeX\ } decide where each figure will go. \footnote{No - I do mean: let it decide and get your meddling fingers away from document beautification and focus on the \textbf{content}. And no, I do NOT care if the figure ends up a universe away from where you think it should go. You are a scientist in training. The day you decide to become a desktop publishing expert looking for a job in a graphic design house, we can discuss your Microsoft Word addiction more seriously.}
+    \item Does the shared Zotero collection under your shared collection contain all the citations in this manuscript?
+    \item Has the shared Zotero collection been set to auto-export to the .bib file you added to the repo?
+    \item Has this manuscript passed Grammarly with at least 99\% rating? The settings are described in the README in the manuscript repo.
+    \item Have you increased the information density to the highest level possible using techniques I have taught you? This will involve a lot of cutting. This involves many devices I have taught you in the scientific writing class. An easy first one is to stop usage of the kind: "Fig X shows Y.". This statement is patronizing to the reviewer (he/she is capable of seeing this if you have made decent figures), and it wastes space. Better method: "TEM data (Fig.~ 2) suggests ...".
+    \item Have you run Grammarly after doing the cutting, ensuring 99\% rating again?
+    \item Has every deserving co-author been listed, and their ORCID id provided in comments in the \LaTeX\ source?
+    \item Have you acknowledged everyone non co-author that helped you, under the acknowledgment section?
+    \item Have you listed at least 5 potential reviewers for this manuscript above in comments in the \LaTeX\ source (in preamble)?
+    \end{enumerate}
+  }%
+}
+
+%%%%% DO NOT DELETE BLOCK ENDS %%%%
+
+\clearpage
+
+\section*{Graphical table of contents}
+
+% Most good journals require a graphical "table" of contents entry (this is somewhat discipline and society dependent as well). The purpose of this is an advertisement for your article on the website of the journal. Ordinarily, this will be a separate document, but it is being included here as a separate section so that we can go through drafting of your article without worrying about edits in different files.
+
+\begin{figure*}[!h]
+\centering
+\includegraphics[width=130mm]{example-image-c}
+\captionsetup{labelformat=empty}
+\caption{A no more than a 30-words long sentence that summarizes what you did in this paper, written for the benefit of a technically-literate layperson.}
+\end{figure*}
+
+\end{document}
